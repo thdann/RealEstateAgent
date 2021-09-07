@@ -7,5 +7,9 @@ namespace RealEstateAgent
 {
     public abstract class Commercial : Estate
     {
+        public Commercial(int id, Address address) :  base(id, address)
+        {
+            
+        }
     }
 }

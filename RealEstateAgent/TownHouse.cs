@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RealEstateAgent
 {
-    public class TownHouse : Villa
+    public class TownHouse : Residential
     {
     }
 }

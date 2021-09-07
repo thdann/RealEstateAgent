@@ -9,8 +9,9 @@ namespace RealEstateAgent
     {
         private int id;
         private Address address;
+        private LegalForm legalForm;
 
-        public Estate(int id, Address adress) 
+        public Estate(int id, Address address) 
         {
             this.id = id;
             this.address = address;
@@ -18,5 +19,22 @@ namespace RealEstateAgent
 
         public abstract int Id { get; set; }
         public abstract Address Address { get; set; }
+        public abstract LegalForm LegalForm { get; set; }
+
+        public Address Address1
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public LegalForm LegalForm1
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

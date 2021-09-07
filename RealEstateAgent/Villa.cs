@@ -7,5 +7,8 @@ namespace RealEstateAgent
 {
     public class Villa : Residential
     {
+        private int gardenArea;
+
+        public 
     }
 }
