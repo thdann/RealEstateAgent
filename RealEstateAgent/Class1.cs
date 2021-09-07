@@ -5,7 +5,4 @@ using System.Text;
 
 namespace RealEstateAgent
 {
-    public class Estate
-    {
-    }
 }
