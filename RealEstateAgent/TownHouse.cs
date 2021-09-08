@@ -16,6 +16,8 @@ namespace RealEstateAgent
 
         }
 
+        public int NumberOfFloors { get; set; }
+
         public override int NumberOfRooms { 
             get => throw new NotImplementedException(); 
             set => throw new NotImplementedException(); }

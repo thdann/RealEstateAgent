@@ -7,12 +7,12 @@ namespace RealEstateAgent
 {
     public class Shop : Commercial
     {
-       // private bool hasFurnishing;
+        private bool hasFurnishing;
 
         public Shop (int id, Address address, double squareMeter, bool hasFurnishing)
             : base (id, address, squareMeter)
         {
-            HasFurnishing = hasFurnishing;
+            this.hasFurnishing = hasFurnishing;
         }
 
         public bool HasFurnishing { get; set; }
