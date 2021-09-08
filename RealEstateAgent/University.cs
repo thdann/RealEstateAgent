@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RealEstateAgent
 {
-    public class University : School
+    public class University : Institutional
     {
     }
 }
