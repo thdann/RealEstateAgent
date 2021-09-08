@@ -9,28 +9,19 @@ namespace RealEstateAgent
     {
         private bool hasFurnishing;
 
-        public Shop (int id, Address address, double squareMeter, bool hasFurnishing)
-            : base (id, address, squareMeter)
+        public Shop (int id, Address address, LegalForm legalForm, double squareMeter, bool hasFurnishing)
+            : base (id, address, legalForm, squareMeter)
         {
             this.hasFurnishing = hasFurnishing;
         }
 
-        public bool HasFurnishing { get; set; }
-
-        public override double SquareMeter 
-        { get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); 
+        public bool HasFurnishing
+        {
+            get { return hasFurnishing; }
+            set { hasFurnishing = value; }
         }
-        public override int Id 
-        { get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); 
-        }
-        public override Address Address 
-        { get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); 
-        }
-        public override LegalForm LegalForm 
-        { get => throw new NotImplementedException(); 
+        public override int Price { 
+            get => throw new NotImplementedException(); 
             set => throw new NotImplementedException(); 
         }
     }

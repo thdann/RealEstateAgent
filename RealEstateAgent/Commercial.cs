@@ -8,11 +8,15 @@ namespace RealEstateAgent
     public abstract class Commercial : Estate
     {
         private double squareMeter;
-        public Commercial(int id, Address address, double squareMeter) :  base(id, address)
+        public Commercial(int id, Address address, LegalForm legalForm, double squareMeter) : base(id, address, legalForm)
         {
             this.squareMeter = squareMeter;
         }
 
-        public abstract double SquareMeter { get; set; }
+        public double SquareMeter
+        {
+            get { return squareMeter; }
+            set { squareMeter = value; }
+        }
     }
 }
