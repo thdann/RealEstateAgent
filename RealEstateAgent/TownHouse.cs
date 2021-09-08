@@ -26,7 +26,7 @@ namespace RealEstateAgent
             get => throw new NotImplementedException(); 
             set => throw new NotImplementedException(); }
         public override LegalForm LegalForm { 
-            get => throw new NotImplementedException(); s
+            get => throw new NotImplementedException(); 
             set => throw new NotImplementedException(); }
     }
 }

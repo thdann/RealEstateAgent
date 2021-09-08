@@ -3,22 +3,18 @@
   <Class Name="RealEstateAgent.Estate">
     <Position X="6.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAASIAAAAAAAAAAAAAAEAAAAAAIAAAACAAAAAAAAAiA=</HashCode>
+      <HashCode>AAADIAAAAQAAAAAAAAAAAAAAAAIAAAACAAAAAAAAAiA=</HashCode>
       <FileName>Estate.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Address1" />
-      <Property Name="LegalForm1" />
-    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RealEstateAgent.Commercial">
-    <Position X="2.5" Y="4" Width="1.5" />
+    <Position X="1.75" Y="3.75" Width="1.5" />
     <Compartments>
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Commercial.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -37,7 +33,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="RealEstateAgent.Apartment">
-    <Position X="4" Y="8.5" Width="1.5" />
+    <Position X="4.5" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACIEAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAABAAA=</HashCode>
       <FileName>Apartment.cs</FileName>
@@ -46,28 +42,28 @@
   <Class Name="RealEstateAgent.Villa">
     <Position X="6.75" Y="8.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACIEAAAAAgAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Villa.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RealEstateAgent.TownHouse">
     <Position X="9" Y="8.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACIEAAAAAAAAAgAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>TownHouse.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RealEstateAgent.Shop">
-    <Position X="3.5" Y="6.25" Width="1.5" />
+    <Position X="2.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACIAAAAAAAAAAAABAAAAAAAAAAAAACAgAAAAAAAAA=</HashCode>
       <FileName>Shop.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RealEstateAgent.Warehouse">
-    <Position X="1.25" Y="6.25" Width="1.5" />
+    <Position X="0.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACIAAAAAAAAAAAABAAAAAAAAAAAAACAAAAAAAAIAA=</HashCode>
       <FileName>Warehouse.cs</FileName>
     </TypeIdentifier>
   </Class>

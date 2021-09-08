@@ -10,31 +10,28 @@ namespace RealEstateAgent
         private int id;
         private Address address;
         private LegalForm legalForm;
+        private int price;
 
-        public Estate(int id, Address address) 
+        public Estate(int id, Address address, LegalForm legalForm, int price)
         {
             this.id = id;
             this.address = address;
+            this.legalForm = legalForm;
+            this.price = price;
         }
 
-        public abstract int Id { get; set; }
-        public abstract Address Address { get; set; }
-        public abstract LegalForm LegalForm { get; set; }
-
-        public Address Address1
-        {
-            get => default;
-            set
-            {
-            }
+        // Constructor to be used when price is yet not set
+        public Estate(int id, Address address, LegalForm legalForm) 
+            : this(id, address, legalForm, 0) { }
+        public int Id { 
+            get { return id; }
+            set { id = value; }
         }
+        public Address Address { get; set; }
+        public LegalForm LegalForm { get; set; }   
+        
+        // Abstract method - price is determened on lower level
+        public abstract int Price { get; set; }
 
-        public LegalForm LegalForm1
-        {
-            get => default;
-            set
-            {
-            }
-        }
     }
 }
