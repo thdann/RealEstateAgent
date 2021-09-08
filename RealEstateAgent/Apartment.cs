@@ -9,23 +9,23 @@ namespace RealEstateAgent
     {
         private bool hasElevator;
 
-        public Apartment(int id, Address address, int numberOfRooms, bool hasElevator) : base(id, address, numberOfRooms) 
+        public Apartment(int id, Address address, LegalForm legalform, int numberOfRooms, bool hasElevator) 
+            : base(id, address, legalform, numberOfRooms)
         {
             this.hasElevator = hasElevator;
-        
         }
 
-        public override int NumberOfRooms { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); }
-        public override int Id { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); }
-        public override Address Address { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); }
-        public override LegalForm LegalForm { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); }
+        public bool HasElevator
+        {
+            get { return hasElevator; }
+            set { hasElevator = value; }
+        }
+
+        // TODO: implementera denna metod här!
+        public override int Price
+        {
+            get => throw new NotImplementedException();
+            set => throw new NotImplementedException();
+        }
     }
-}
+ }

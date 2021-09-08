@@ -9,25 +9,20 @@ namespace RealEstateAgent
     {
         private int numberOfFloors;
 
-        public TownHouse (int id, Address address, int numberOfRooms, int numberOfFloors) 
-            : base (id, address, numberOfRooms)
+        public TownHouse(int id, Address address, LegalForm legalform, int numberOfRooms, int numberOfFloors) 
+            : base (id, address, legalform, numberOfRooms)
         {
             this.numberOfFloors = numberOfFloors;
 
         }
 
-        public int NumberOfFloors { get; set; }
+        public int NumberOfFloors {
+            get { return numberOfFloors; }
+            set { numberOfFloors = value; }
+        }
 
-        public override int NumberOfRooms { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); }
-        public override int Id { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); }
-        public override Address Address { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); }
-        public override LegalForm LegalForm { 
+        //ToDO implementera denna metod här!
+        public override int Price { 
             get => throw new NotImplementedException(); 
             set => throw new NotImplementedException(); }
     }
