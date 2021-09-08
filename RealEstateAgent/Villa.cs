@@ -9,23 +9,23 @@ namespace RealEstateAgent
     {
         private int gardenArea;
 
-        public Villa (int id, Address address, int numberOfRooms, int gardenArea) 
-            : base (id, address, numberOfRooms) 
+        public Villa(int id, Address address, LegalForm legalform, int numberOfRooms, int gardenArea)
+            : base(id, address, legalform, numberOfRooms)
         {
             this.gardenArea = gardenArea;
         }
 
-        public override int NumberOfRooms { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); }
-        public override int Id { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); }
-        public override Address Address { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); }
-        public override LegalForm LegalForm { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); }
+        public int GardenArea
+        {
+            get { return gardenArea; }
+            set { gardenArea = value; }
+        }
+
+        //TODO: implementera denna här!
+        public override int Price
+        {
+            get => throw new NotImplementedException();
+            set => throw new NotImplementedException();
+        }
     }
 }

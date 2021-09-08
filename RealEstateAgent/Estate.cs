@@ -27,8 +27,14 @@ namespace RealEstateAgent
             get { return id; }
             set { id = value; }
         }
-        public Address Address { get; set; }
-        public LegalForm LegalForm { get; set; }   
+        public Address Address {
+            get { return address; }
+            set { address = value; }
+        }
+        public LegalForm LegalForm {
+            get { return legalForm; }
+            set { legalForm = value; } 
+        }   
         
         // Abstract method - price is determened on lower level
         public abstract int Price { get; set; }
