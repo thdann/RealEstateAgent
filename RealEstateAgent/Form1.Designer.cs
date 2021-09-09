@@ -47,6 +47,7 @@ namespace RealEstateAgent
             this.lbl_legalForm = new System.Windows.Forms.Label();
             this.cmb_legalForm = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_price = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnl_southwest.SuspendLayout();
             this.pnl_northwest.SuspendLayout();
@@ -85,6 +86,7 @@ namespace RealEstateAgent
             this.pnl_southwest.Controls.Add(this.cmb_country, 1, 3);
             this.pnl_southwest.Controls.Add(this.lbl_price, 0, 4);
             this.pnl_southwest.Controls.Add(this.txt_tba, 1, 5);
+            this.pnl_southwest.Controls.Add(this.txt_price, 1, 4);
             this.pnl_southwest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_southwest.Location = new System.Drawing.Point(3, 228);
             this.pnl_southwest.Name = "pnl_southwest";
@@ -183,7 +185,7 @@ namespace RealEstateAgent
             this.lbl_price.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_price.Location = new System.Drawing.Point(3, 133);
             this.lbl_price.Name = "lbl_price";
-            this.lbl_price.Size = new System.Drawing.Size(191, 20);
+            this.lbl_price.Size = new System.Drawing.Size(191, 33);
             this.lbl_price.TabIndex = 10;
             this.lbl_price.Text = "Price: ";
             this.lbl_price.Click += new System.EventHandler(this.lbl_price_Click);
@@ -191,7 +193,7 @@ namespace RealEstateAgent
             // txt_tba
             // 
             this.txt_tba.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_tba.Location = new System.Drawing.Point(200, 156);
+            this.txt_tba.Location = new System.Drawing.Point(200, 169);
             this.txt_tba.Name = "txt_tba";
             this.txt_tba.Size = new System.Drawing.Size(191, 27);
             this.txt_tba.TabIndex = 11;
@@ -265,6 +267,14 @@ namespace RealEstateAgent
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // txt_price
+            // 
+            this.txt_price.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_price.Location = new System.Drawing.Point(200, 136);
+            this.txt_price.Name = "txt_price";
+            this.txt_price.Size = new System.Drawing.Size(191, 27);
+            this.txt_price.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -303,6 +313,7 @@ namespace RealEstateAgent
         private System.Windows.Forms.ComboBox cmb_legalForm;
         private System.Windows.Forms.TextBox txt_tba;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txt_price;
     }
 }
 
