@@ -47,7 +47,6 @@ namespace RealEstateAgent
             this.lbl_legalForm = new System.Windows.Forms.Label();
             this.cmb_legalForm = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnl_southwest.SuspendLayout();
             this.pnl_northwest.SuspendLayout();
@@ -62,7 +61,6 @@ namespace RealEstateAgent
             this.tableLayoutPanel1.Controls.Add(this.pnl_southwest, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.pnl_northwest, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -267,15 +265,6 @@ namespace RealEstateAgent
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(403, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -314,7 +303,6 @@ namespace RealEstateAgent
         private System.Windows.Forms.ComboBox cmb_legalForm;
         private System.Windows.Forms.TextBox txt_tba;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
     }
 }
 
