@@ -10,7 +10,7 @@ namespace RealEstateAgent
 
         private MainForm mainform;
 
-        public Controller() 
+        public Controller(MainForm mainform) 
         {
             
         }

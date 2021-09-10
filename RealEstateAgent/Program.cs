@@ -14,13 +14,12 @@ namespace RealEstateAgent
         [STAThread]
         static void Main()
         {
-            MainForm mainform = new MainForm();
-
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(mainform);
 
+            MainForm mainform = new MainForm();
+            Application.Run(mainform);
             new Controller(mainform);
         }
     }
