@@ -53,7 +53,10 @@ namespace RealEstateAgent
             this.lbl_buildingType = new System.Windows.Forms.Label();
             this.lbl_legalForm = new System.Windows.Forms.Label();
             this.cmb_legalForm = new System.Windows.Forms.ComboBox();
-            this.pBox_estateImage = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.lbl_uploadImage = new System.Windows.Forms.Label();
+            this.btn_uploadImage = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_edit = new System.Windows.Forms.Button();
             this.btn_remove = new System.Windows.Forms.Button();
@@ -61,16 +64,13 @@ namespace RealEstateAgent
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.lbl_uploadImage = new System.Windows.Forms.Label();
-            this.btn_uploadImage = new System.Windows.Forms.Button();
+            this.pBox_estateImage = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnl_southwest.SuspendLayout();
             this.pnl_northwest.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_estateImage)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_estateImage)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -80,8 +80,8 @@ namespace RealEstateAgent
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.pnl_southwest, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.pnl_northwest, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pBox_estateImage, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pBox_estateImage, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -116,7 +116,7 @@ namespace RealEstateAgent
             this.pnl_southwest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_southwest.Location = new System.Drawing.Point(3, 228);
             this.pnl_southwest.Name = "pnl_southwest";
-            this.pnl_southwest.RowCount = 9;
+            this.pnl_southwest.RowCount = 10;
             this.pnl_southwest.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.pnl_southwest.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.pnl_southwest.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -126,6 +126,7 @@ namespace RealEstateAgent
             this.pnl_southwest.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.pnl_southwest.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.pnl_southwest.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.pnl_southwest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.pnl_southwest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.pnl_southwest.Size = new System.Drawing.Size(473, 321);
             this.pnl_southwest.TabIndex = 0;
@@ -352,16 +353,45 @@ namespace RealEstateAgent
             this.cmb_legalForm.Name = "cmb_legalForm";
             this.cmb_legalForm.Size = new System.Drawing.Size(231, 28);
             this.cmb_legalForm.TabIndex = 3;
+            this.cmb_legalForm.SelectedIndexChanged += new System.EventHandler(this.cmb_legalForm_SelectedIndexChanged);
             // 
-            // pBox_estateImage
+            // comboBox1
             // 
-            this.pBox_estateImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pBox_estateImage.Location = new System.Drawing.Point(482, 261);
-            this.pBox_estateImage.Name = "pBox_estateImage";
-            this.pBox_estateImage.Size = new System.Drawing.Size(473, 254);
-            this.pBox_estateImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pBox_estateImage.TabIndex = 2;
-            this.pBox_estateImage.TabStop = false;
+            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(239, 37);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(231, 28);
+            this.comboBox1.TabIndex = 4;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(239, 3);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(231, 28);
+            this.comboBox2.TabIndex = 5;
+            // 
+            // lbl_uploadImage
+            // 
+            this.lbl_uploadImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_uploadImage.AutoSize = true;
+            this.lbl_uploadImage.Location = new System.Drawing.Point(3, 109);
+            this.lbl_uploadImage.Name = "lbl_uploadImage";
+            this.lbl_uploadImage.Size = new System.Drawing.Size(230, 20);
+            this.lbl_uploadImage.TabIndex = 6;
+            this.lbl_uploadImage.Text = "Image:";
+            // 
+            // btn_uploadImage
+            // 
+            this.btn_uploadImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_uploadImage.Location = new System.Drawing.Point(239, 105);
+            this.btn_uploadImage.Name = "btn_uploadImage";
+            this.btn_uploadImage.Size = new System.Drawing.Size(231, 29);
+            this.btn_uploadImage.TabIndex = 7;
+            this.btn_uploadImage.Text = "Upload Image";
+            this.btn_uploadImage.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
@@ -439,60 +469,32 @@ namespace RealEstateAgent
             this.address.Name = "address";
             this.address.ReadOnly = true;
             // 
-            // comboBox1
+            // pBox_estateImage
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(239, 37);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(231, 28);
-            this.comboBox1.TabIndex = 4;
+            this.pBox_estateImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pBox_estateImage.Location = new System.Drawing.Point(482, 261);
+            this.pBox_estateImage.Name = "pBox_estateImage";
+            this.pBox_estateImage.Size = new System.Drawing.Size(473, 254);
+            this.pBox_estateImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pBox_estateImage.TabIndex = 2;
+            this.pBox_estateImage.TabStop = false;
             // 
-            // comboBox2
-            // 
-            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(239, 3);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(231, 28);
-            this.comboBox2.TabIndex = 5;
-            // 
-            // lbl_uploadImage
-            // 
-            this.lbl_uploadImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_uploadImage.AutoSize = true;
-            this.lbl_uploadImage.Location = new System.Drawing.Point(3, 109);
-            this.lbl_uploadImage.Name = "lbl_uploadImage";
-            this.lbl_uploadImage.Size = new System.Drawing.Size(230, 20);
-            this.lbl_uploadImage.TabIndex = 6;
-            this.lbl_uploadImage.Text = "Image:";
-            // 
-            // btn_uploadImage
-            // 
-            this.btn_uploadImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_uploadImage.Location = new System.Drawing.Point(239, 105);
-            this.btn_uploadImage.Name = "btn_uploadImage";
-            this.btn_uploadImage.Size = new System.Drawing.Size(231, 29);
-            this.btn_uploadImage.TabIndex = 7;
-            this.btn_uploadImage.Text = "Upload Image";
-            this.btn_uploadImage.UseVisualStyleBackColor = true;
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(958, 552);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Form1";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.pnl_southwest.ResumeLayout(false);
             this.pnl_southwest.PerformLayout();
             this.pnl_northwest.ResumeLayout(false);
             this.pnl_northwest.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_estateImage)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_estateImage)).EndInit();
             this.ResumeLayout(false);
 
         }

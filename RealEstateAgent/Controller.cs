@@ -7,13 +7,11 @@ namespace RealEstateAgent
 {
     public class Controller
     {
+        private MainForm mainForm;
 
-        private MainForm mainform;
-
-        public Controller(MainForm mainform) 
+        public Controller(MainForm mainForm)
         {
-            
+            this.mainForm = mainForm;
         }
-        
     }
 }

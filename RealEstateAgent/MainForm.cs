@@ -15,6 +15,15 @@ namespace RealEstateAgent
         public MainForm()
         {
             InitializeComponent();
+
+            // Our own instaniations GUI
+            InitializeGUI();
+        }
+
+        public void InitializeGUI() {
+            cmb_legalForm.DataSource = Enum.GetValues(typeof(LegalForm));
+            cmb_country.DataSource = Enum.GetValues(typeof(Countries));
+
         }
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
@@ -48,6 +57,11 @@ namespace RealEstateAgent
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cmb_legalForm_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -18,9 +18,12 @@ namespace RealEstateAgent
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            MainForm mainform = new MainForm();
-            Application.Run(mainform);
-            new Controller(mainform);
+            MainForm mainForm = new MainForm();
+            new Controller(mainForm);
+
+            //Gui opens
+            Application.Run(mainForm);
+            
         }
     }
 }
