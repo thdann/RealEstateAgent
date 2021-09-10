@@ -56,28 +56,28 @@
   <Class Name="RealEstateAgent.Shop">
     <Position X="2.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACIAIAAAAAAAAAABAAAAAAAAAAAAACAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
       <FileName>Shop.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RealEstateAgent.Warehouse">
     <Position X="0.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACIAAAAAAAAAAAABAAAAAAAAAAAAACAAAAAAAAIAA=</HashCode>
+      <HashCode>AAAgAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
       <FileName>Warehouse.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RealEstateAgent.University">
     <Position X="13" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>University.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RealEstateAgent.School">
     <Position X="11" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>School.cs</FileName>
     </TypeIdentifier>
   </Class>

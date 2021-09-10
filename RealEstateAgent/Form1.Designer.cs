@@ -42,6 +42,12 @@ namespace RealEstateAgent
             this.lbl_price = new System.Windows.Forms.Label();
             this.txt_dynamic1 = new System.Windows.Forms.TextBox();
             this.txt_price = new System.Windows.Forms.TextBox();
+            this.txt_dynamic2 = new System.Windows.Forms.TextBox();
+            this.lbl_dynamic1 = new System.Windows.Forms.Label();
+            this.lbl_dynamic2 = new System.Windows.Forms.Label();
+            this.lbl_dynamic3 = new System.Windows.Forms.Label();
+            this.txt_dynamic3 = new System.Windows.Forms.TextBox();
+            this.btn_save = new System.Windows.Forms.Button();
             this.pnl_northwest = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_estateType = new System.Windows.Forms.Label();
             this.lbl_buildingType = new System.Windows.Forms.Label();
@@ -55,12 +61,10 @@ namespace RealEstateAgent
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_dynamic2 = new System.Windows.Forms.TextBox();
-            this.lbl_dynamic1 = new System.Windows.Forms.Label();
-            this.lbl_dynamic2 = new System.Windows.Forms.Label();
-            this.lbl_dynamic3 = new System.Windows.Forms.Label();
-            this.txt_dynamic3 = new System.Windows.Forms.TextBox();
-            this.btn_save = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.lbl_uploadImage = new System.Windows.Forms.Label();
+            this.btn_uploadImage = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnl_southwest.SuspendLayout();
             this.pnl_northwest.SuspendLayout();
@@ -228,6 +232,62 @@ namespace RealEstateAgent
             this.txt_price.Size = new System.Drawing.Size(231, 27);
             this.txt_price.TabIndex = 12;
             // 
+            // txt_dynamic2
+            // 
+            this.txt_dynamic2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_dynamic2.Location = new System.Drawing.Point(239, 202);
+            this.txt_dynamic2.Name = "txt_dynamic2";
+            this.txt_dynamic2.Size = new System.Drawing.Size(231, 27);
+            this.txt_dynamic2.TabIndex = 13;
+            // 
+            // lbl_dynamic1
+            // 
+            this.lbl_dynamic1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_dynamic1.AutoSize = true;
+            this.lbl_dynamic1.Location = new System.Drawing.Point(3, 172);
+            this.lbl_dynamic1.Name = "lbl_dynamic1";
+            this.lbl_dynamic1.Size = new System.Drawing.Size(230, 20);
+            this.lbl_dynamic1.TabIndex = 14;
+            this.lbl_dynamic1.Text = "DynamicLabel1";
+            // 
+            // lbl_dynamic2
+            // 
+            this.lbl_dynamic2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_dynamic2.AutoSize = true;
+            this.lbl_dynamic2.Location = new System.Drawing.Point(3, 205);
+            this.lbl_dynamic2.Name = "lbl_dynamic2";
+            this.lbl_dynamic2.Size = new System.Drawing.Size(230, 20);
+            this.lbl_dynamic2.TabIndex = 15;
+            this.lbl_dynamic2.Text = "DynamicLabel2";
+            // 
+            // lbl_dynamic3
+            // 
+            this.lbl_dynamic3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_dynamic3.AutoSize = true;
+            this.lbl_dynamic3.Location = new System.Drawing.Point(3, 238);
+            this.lbl_dynamic3.Name = "lbl_dynamic3";
+            this.lbl_dynamic3.Size = new System.Drawing.Size(230, 20);
+            this.lbl_dynamic3.TabIndex = 16;
+            this.lbl_dynamic3.Text = "DynamicLabel3";
+            // 
+            // txt_dynamic3
+            // 
+            this.txt_dynamic3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_dynamic3.Location = new System.Drawing.Point(239, 235);
+            this.txt_dynamic3.Name = "txt_dynamic3";
+            this.txt_dynamic3.Size = new System.Drawing.Size(231, 27);
+            this.txt_dynamic3.TabIndex = 17;
+            // 
+            // btn_save
+            // 
+            this.btn_save.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_save.Location = new System.Drawing.Point(239, 268);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(231, 50);
+            this.btn_save.TabIndex = 18;
+            this.btn_save.Text = "Save";
+            this.btn_save.UseVisualStyleBackColor = true;
+            // 
             // pnl_northwest
             // 
             this.pnl_northwest.ColumnCount = 2;
@@ -237,6 +297,10 @@ namespace RealEstateAgent
             this.pnl_northwest.Controls.Add(this.lbl_buildingType, 0, 1);
             this.pnl_northwest.Controls.Add(this.lbl_legalForm, 0, 2);
             this.pnl_northwest.Controls.Add(this.cmb_legalForm, 1, 2);
+            this.pnl_northwest.Controls.Add(this.comboBox1, 1, 1);
+            this.pnl_northwest.Controls.Add(this.comboBox2, 1, 0);
+            this.pnl_northwest.Controls.Add(this.lbl_uploadImage, 0, 3);
+            this.pnl_northwest.Controls.Add(this.btn_uploadImage, 1, 3);
             this.pnl_northwest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_northwest.Location = new System.Drawing.Point(3, 3);
             this.pnl_northwest.Name = "pnl_northwest";
@@ -244,16 +308,16 @@ namespace RealEstateAgent
             this.pnl_northwest.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.pnl_northwest.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.pnl_northwest.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.pnl_northwest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.pnl_northwest.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.pnl_northwest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.pnl_northwest.Size = new System.Drawing.Size(473, 219);
             this.pnl_northwest.TabIndex = 1;
             // 
             // lbl_estateType
             // 
+            this.lbl_estateType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_estateType.AutoSize = true;
-            this.lbl_estateType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_estateType.Location = new System.Drawing.Point(3, 0);
+            this.lbl_estateType.Location = new System.Drawing.Point(3, 7);
             this.lbl_estateType.Name = "lbl_estateType";
             this.lbl_estateType.Size = new System.Drawing.Size(230, 20);
             this.lbl_estateType.TabIndex = 0;
@@ -262,9 +326,9 @@ namespace RealEstateAgent
             // 
             // lbl_buildingType
             // 
+            this.lbl_buildingType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_buildingType.AutoSize = true;
-            this.lbl_buildingType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_buildingType.Location = new System.Drawing.Point(3, 20);
+            this.lbl_buildingType.Location = new System.Drawing.Point(3, 41);
             this.lbl_buildingType.Name = "lbl_buildingType";
             this.lbl_buildingType.Size = new System.Drawing.Size(230, 20);
             this.lbl_buildingType.TabIndex = 1;
@@ -272,11 +336,11 @@ namespace RealEstateAgent
             // 
             // lbl_legalForm
             // 
+            this.lbl_legalForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_legalForm.AutoSize = true;
-            this.lbl_legalForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_legalForm.Location = new System.Drawing.Point(3, 40);
+            this.lbl_legalForm.Location = new System.Drawing.Point(3, 75);
             this.lbl_legalForm.Name = "lbl_legalForm";
-            this.lbl_legalForm.Size = new System.Drawing.Size(230, 34);
+            this.lbl_legalForm.Size = new System.Drawing.Size(230, 20);
             this.lbl_legalForm.TabIndex = 2;
             this.lbl_legalForm.Text = "Legal form:";
             // 
@@ -284,7 +348,7 @@ namespace RealEstateAgent
             // 
             this.cmb_legalForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmb_legalForm.FormattingEnabled = true;
-            this.cmb_legalForm.Location = new System.Drawing.Point(239, 43);
+            this.cmb_legalForm.Location = new System.Drawing.Point(239, 71);
             this.cmb_legalForm.Name = "cmb_legalForm";
             this.cmb_legalForm.Size = new System.Drawing.Size(231, 28);
             this.cmb_legalForm.TabIndex = 3;
@@ -375,61 +439,43 @@ namespace RealEstateAgent
             this.address.Name = "address";
             this.address.ReadOnly = true;
             // 
-            // txt_dynamic2
+            // comboBox1
             // 
-            this.txt_dynamic2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_dynamic2.Location = new System.Drawing.Point(239, 202);
-            this.txt_dynamic2.Name = "txt_dynamic2";
-            this.txt_dynamic2.Size = new System.Drawing.Size(231, 27);
-            this.txt_dynamic2.TabIndex = 13;
+            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(239, 37);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(231, 28);
+            this.comboBox1.TabIndex = 4;
             // 
-            // lbl_dynamic1
+            // comboBox2
             // 
-            this.lbl_dynamic1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_dynamic1.AutoSize = true;
-            this.lbl_dynamic1.Location = new System.Drawing.Point(3, 172);
-            this.lbl_dynamic1.Name = "lbl_dynamic1";
-            this.lbl_dynamic1.Size = new System.Drawing.Size(230, 20);
-            this.lbl_dynamic1.TabIndex = 14;
-            this.lbl_dynamic1.Text = "DynamicLabel1";
+            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(239, 3);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(231, 28);
+            this.comboBox2.TabIndex = 5;
             // 
-            // lbl_dynamic2
+            // lbl_uploadImage
             // 
-            this.lbl_dynamic2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_dynamic2.AutoSize = true;
-            this.lbl_dynamic2.Location = new System.Drawing.Point(3, 205);
-            this.lbl_dynamic2.Name = "lbl_dynamic2";
-            this.lbl_dynamic2.Size = new System.Drawing.Size(230, 20);
-            this.lbl_dynamic2.TabIndex = 15;
-            this.lbl_dynamic2.Text = "DynamicLabel2";
+            this.lbl_uploadImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_uploadImage.AutoSize = true;
+            this.lbl_uploadImage.Location = new System.Drawing.Point(3, 109);
+            this.lbl_uploadImage.Name = "lbl_uploadImage";
+            this.lbl_uploadImage.Size = new System.Drawing.Size(230, 20);
+            this.lbl_uploadImage.TabIndex = 6;
+            this.lbl_uploadImage.Text = "Image:";
             // 
-            // lbl_dynamic3
+            // btn_uploadImage
             // 
-            this.lbl_dynamic3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_dynamic3.AutoSize = true;
-            this.lbl_dynamic3.Location = new System.Drawing.Point(3, 238);
-            this.lbl_dynamic3.Name = "lbl_dynamic3";
-            this.lbl_dynamic3.Size = new System.Drawing.Size(230, 20);
-            this.lbl_dynamic3.TabIndex = 16;
-            this.lbl_dynamic3.Text = "DynamicLabel3";
-            // 
-            // txt_dynamic3
-            // 
-            this.txt_dynamic3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_dynamic3.Location = new System.Drawing.Point(239, 235);
-            this.txt_dynamic3.Name = "txt_dynamic3";
-            this.txt_dynamic3.Size = new System.Drawing.Size(231, 27);
-            this.txt_dynamic3.TabIndex = 17;
-            // 
-            // btn_save
-            // 
-            this.btn_save.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_save.Location = new System.Drawing.Point(239, 268);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(231, 50);
-            this.btn_save.TabIndex = 18;
-            this.btn_save.Text = "Save";
-            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_uploadImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_uploadImage.Location = new System.Drawing.Point(239, 105);
+            this.btn_uploadImage.Name = "btn_uploadImage";
+            this.btn_uploadImage.Size = new System.Drawing.Size(231, 29);
+            this.btn_uploadImage.TabIndex = 7;
+            this.btn_uploadImage.Text = "Upload Image";
+            this.btn_uploadImage.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -485,6 +531,10 @@ namespace RealEstateAgent
         private System.Windows.Forms.Label lbl_dynamic3;
         private System.Windows.Forms.TextBox txt_dynamic3;
         private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label lbl_uploadImage;
+        private System.Windows.Forms.Button btn_uploadImage;
     }
 }
 
