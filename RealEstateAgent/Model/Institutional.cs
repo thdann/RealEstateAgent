@@ -7,9 +7,14 @@ namespace RealEstateAgent
 {
     public abstract class Institutional : Estate
     {
-        protected Institutional(int id, Address address, LegalForm legalForm, int price) 
+
+        public Institutional()
+        {
+
+        }
+       /* protected Institutional(int id, Address address, LegalForm legalForm, int price) 
             : base(id, address, legalForm, price)
         {
-        }
+        } */
     }
 }

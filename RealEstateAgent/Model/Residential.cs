@@ -8,6 +8,11 @@ namespace RealEstateAgent
     public abstract class Residential : Estate
     {
 
+        public Residential()
+        {
+
+        }
+
         private int numberOfRooms;
         //public Residential(int id, Address address, LegalForm legalform, int numberOfRooms) 
         //    : base(id, address, legalform)

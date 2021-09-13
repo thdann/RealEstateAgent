@@ -9,11 +9,16 @@ namespace RealEstateAgent
     {
         private bool hasElevator;
 
-        public Apartment(int id, Address address, LegalForm legalform, int numberOfRooms, bool hasElevator) 
+        public Apartment()
+        {
+
+        }
+
+      /*  public Apartment(int id, Address address, LegalForm legalform, int numberOfRooms, bool hasElevator) 
             : base(id, address, legalform, numberOfRooms)
         {
             this.hasElevator = hasElevator;
-        }
+        } */
 
         public bool HasElevator
         {

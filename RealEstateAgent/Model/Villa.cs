@@ -9,11 +9,13 @@ namespace RealEstateAgent
     {
         private int gardenArea;
 
-        public Villa(int id, Address address, LegalForm legalform, int numberOfRooms, int gardenArea)
+        public Villa() { }
+
+       /* public Villa(int id, Address address, LegalForm legalform, int numberOfRooms, int gardenArea)
             : base(id, address, legalform, numberOfRooms)
         {
             this.gardenArea = gardenArea;
-        }
+        } */
 
         public int GardenArea
         {

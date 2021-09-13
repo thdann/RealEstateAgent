@@ -5,12 +5,17 @@ using System.Text;
 
 namespace RealEstateAgent
 {
-    public class School : Institutional
+    public class School : Institutional { 
+
+        public School()
     {
-        public School(int id, Address address, LegalForm legalForm, int price) 
+
+    }
+    
+      /*  public School(int id, Address address, LegalForm legalForm, int price) 
             : base(id, address, legalForm, price)
         {
-        }
+        } */
 
         //ToDO implementera price här
         public override int Price { 

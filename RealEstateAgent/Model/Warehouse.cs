@@ -8,12 +8,17 @@ namespace RealEstateAgent
     public class Warehouse : Commercial
     {
         private bool haveOffice;
+
+        public Warehouse()
+        {
+
+        }
      
-        public Warehouse(int id, Address address, LegalForm legalForm, double squareMeter, bool haveOffice)
+       /* public Warehouse(int id, Address address, LegalForm legalForm, double squareMeter, bool haveOffice)
             : base (id, address, legalForm, squareMeter)
         {
             this.HaveOffice = haveOffice;
-        }
+        } */
 
         public bool HaveOffice 
         {

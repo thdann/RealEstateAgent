@@ -131,14 +131,14 @@ namespace RealEstateAgent
 
         }
 
-        private LegalForm readLegalForm() { 
+    /*    private LegalForm readLegalForm() { 
         
         }
 
         private int readPrice() { 
 
         }
-
+    */
 
 
 
@@ -148,7 +148,7 @@ namespace RealEstateAgent
 
             switch (selectedEstateType)
             {
-                case "Warehouse":
+            /*    case "Warehouse":
                     estate = new Warehouse();
                     break;
 
@@ -163,10 +163,10 @@ namespace RealEstateAgent
                 case "Villa":
                     estate = new Villa();
                     break;
-
+            */
                 case "Townhouse":
                     estate = new TownHouse();
-
+                    Debug.WriteLine("Du är i townhouse");
                     Debug.WriteLine(estate.ToString());
                     break;
 

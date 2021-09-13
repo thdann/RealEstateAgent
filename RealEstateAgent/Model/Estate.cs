@@ -12,6 +12,11 @@ namespace RealEstateAgent
         private LegalForm legalForm;
         private int price;
 
+        public Estate()
+        {
+
+        }
+
         //public Estate(int id, Address address, LegalForm legalForm, int price)
         //{
         //    this.id = id;

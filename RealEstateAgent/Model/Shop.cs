@@ -9,12 +9,17 @@ namespace RealEstateAgent
     {
         private bool hasFurnishing;
 
-        public Shop (int id, Address address, LegalForm legalForm, double squareMeter, bool hasFurnishing)
+        public Shop()
+        {
+
+        }
+
+       /* public Shop (int id, Address address, LegalForm legalForm, double squareMeter, bool hasFurnishing)
             : base (id, address, legalForm, squareMeter)
         {
             this.hasFurnishing = hasFurnishing;
         }
-
+       */
         public bool HasFurnishing
         {
             get { return hasFurnishing; }
