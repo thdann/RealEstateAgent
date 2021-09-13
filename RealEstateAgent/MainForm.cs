@@ -143,13 +143,44 @@ namespace RealEstateAgent
                     lbl_dynamic1.Text = "TBA:";
                     break;
 
-
             }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            String selectedEstateType = comboBox1.SelectedItem.ToString();
+
+            switch (selectedEstateType)
+            {
+                case "Warehouse":
+                    lbl_dynamic2.Text = "Has office:";
+                    lbl_dynamic3.Text = "Finns ej?";
+                    break;
+
+                case "Shop":
+                    lbl_dynamic2.Text = "Has furniture:";
+                    lbl_dynamic3.Text = "Finns ej?";
+                    break;
+
+                case "Apartment":
+                    lbl_dynamic2.Text = "Has elevator:";
+                    lbl_dynamic3.Text = "Finns ej?";
+                    break;
+
+                case "Villa":
+                    lbl_dynamic2.Text = "Garden area:";
+                    lbl_dynamic3.Text = "Finns ej?";
+                    break;
+
+                case "Townhouse":
+                    lbl_dynamic2.Text = "Number of floors:";
+                    lbl_dynamic3.Text = "Finns ej?";
+                    break;
+
+            }
+
         }
+
     }
+
 }
