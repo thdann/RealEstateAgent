@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RealEstateAgent
@@ -29,28 +22,6 @@ namespace RealEstateAgent
             comboBox2.DataSource = Enum.GetValues(typeof(EstateType));
 
         }
-
-     /*   private void addEstate(String estateType)
-        {
-            
-            switch (estateType) {
-
-                case "Residential":
-                    createResidential();
-                    break;
-
-                case "Institutional":
-                    createInstitutional();
-                    break;
-
-                case "Commercial":
-                    createCommericial();
-                    break;
-
-    
-            }
-
-        } */
 
         private void createResidential()
         {
@@ -118,6 +89,12 @@ namespace RealEstateAgent
 
         }
 
+        private int readId() {
+
+           return Convert.ToInt32(txt_dynamic3.Text);
+        
+        }
+        
         private Address readAddress() {
 
             Address address = new(
@@ -130,17 +107,22 @@ namespace RealEstateAgent
             return address;
 
         }
+        
+        private LegalForm readLegalForm() {
 
-    /*    private LegalForm readLegalForm() { 
+            // Kontrollera så att inte -1?
+            return (LegalForm)cmb_legalForm.SelectedValue;
         
         }
 
-        private int readPrice() { 
+        private int readPrice() {
+            return Convert.ToInt32(txt_price.Text);
+        }
+
+        private int readAttribute1() {
+            return Convert.ToInt32(txt_dynamic1.Text);
 
         }
-    */
-
-
 
         private void btn_save_Click(object sender, EventArgs e)
         {
@@ -168,11 +150,18 @@ namespace RealEstateAgent
                     estate = new TownHouse();
                     Debug.WriteLine("Du är i townhouse");
                     Debug.WriteLine(estate.ToString());
+                    
+                    // Sätt attributen som är för townhouse men inte det andra.
+                    // readAttribute1();
                     break;
 
             }
 
-
+            estate.Id = readId();
+            estate.Address = readAddress();
+            estate.LegalForm = readLegalForm();
+            estate.Price = readPrice();
+            
 
         }
 

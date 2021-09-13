@@ -56,6 +56,9 @@ namespace RealEstateAgent
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.Ibl_id = new System.Windows.Forms.Label();
+            this.lbl_uploadImages = new System.Windows.Forms.Label();
+            this.btn_upploadImages = new System.Windows.Forms.Button();
+            this.txt_id = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_edit = new System.Windows.Forms.Button();
             this.btn_remove = new System.Windows.Forms.Button();
@@ -64,9 +67,6 @@ namespace RealEstateAgent
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pBox_estateImage = new System.Windows.Forms.PictureBox();
-            this.lbl_uploadImages = new System.Windows.Forms.Label();
-            this.btn_upploadImages = new System.Windows.Forms.Button();
-            this.txt_id = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnl_southwest.SuspendLayout();
             this.pnl_northwest.SuspendLayout();
@@ -271,7 +271,7 @@ namespace RealEstateAgent
             this.lbl_dynamic3.Name = "lbl_dynamic3";
             this.lbl_dynamic3.Size = new System.Drawing.Size(230, 20);
             this.lbl_dynamic3.TabIndex = 16;
-            this.lbl_dynamic3.Text = "DynamicLabel3";
+            this.lbl_dynamic3.Text = "Id";
             // 
             // txt_dynamic3
             // 
@@ -393,6 +393,34 @@ namespace RealEstateAgent
             this.Ibl_id.TabIndex = 6;
             this.Ibl_id.Text = "Id:";
             // 
+            // lbl_uploadImages
+            // 
+            this.lbl_uploadImages.AutoSize = true;
+            this.lbl_uploadImages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_uploadImages.Location = new System.Drawing.Point(3, 135);
+            this.lbl_uploadImages.Name = "lbl_uploadImages";
+            this.lbl_uploadImages.Size = new System.Drawing.Size(230, 35);
+            this.lbl_uploadImages.TabIndex = 8;
+            this.lbl_uploadImages.Text = "Image:";
+            // 
+            // btn_upploadImages
+            // 
+            this.btn_upploadImages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_upploadImages.Location = new System.Drawing.Point(239, 138);
+            this.btn_upploadImages.Name = "btn_upploadImages";
+            this.btn_upploadImages.Size = new System.Drawing.Size(231, 29);
+            this.btn_upploadImages.TabIndex = 9;
+            this.btn_upploadImages.Text = "Upload image";
+            this.btn_upploadImages.UseVisualStyleBackColor = true;
+            // 
+            // txt_id
+            // 
+            this.txt_id.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_id.Location = new System.Drawing.Point(239, 105);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(231, 27);
+            this.txt_id.TabIndex = 10;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -480,34 +508,6 @@ namespace RealEstateAgent
             this.pBox_estateImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBox_estateImage.TabIndex = 2;
             this.pBox_estateImage.TabStop = false;
-            // 
-            // lbl_uploadImages
-            // 
-            this.lbl_uploadImages.AutoSize = true;
-            this.lbl_uploadImages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_uploadImages.Location = new System.Drawing.Point(3, 135);
-            this.lbl_uploadImages.Name = "lbl_uploadImages";
-            this.lbl_uploadImages.Size = new System.Drawing.Size(230, 35);
-            this.lbl_uploadImages.TabIndex = 8;
-            this.lbl_uploadImages.Text = "Image:";
-            // 
-            // btn_upploadImages
-            // 
-            this.btn_upploadImages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_upploadImages.Location = new System.Drawing.Point(239, 138);
-            this.btn_upploadImages.Name = "btn_upploadImages";
-            this.btn_upploadImages.Size = new System.Drawing.Size(231, 29);
-            this.btn_upploadImages.TabIndex = 9;
-            this.btn_upploadImages.Text = "Upload image";
-            this.btn_upploadImages.UseVisualStyleBackColor = true;
-            // 
-            // txt_id
-            // 
-            this.txt_id.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_id.Location = new System.Drawing.Point(239, 105);
-            this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(231, 27);
-            this.txt_id.TabIndex = 10;
             // 
             // MainForm
             // 
