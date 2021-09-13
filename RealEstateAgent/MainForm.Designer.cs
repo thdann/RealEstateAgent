@@ -396,6 +396,7 @@ namespace RealEstateAgent
             this.btn_uploadImage.TabIndex = 7;
             this.btn_uploadImage.Text = "Upload Image";
             this.btn_uploadImage.UseVisualStyleBackColor = true;
+            this.btn_uploadImage.Click += new System.EventHandler(this.btn_uploadImage_Click);
             // 
             // tableLayoutPanel2
             // 

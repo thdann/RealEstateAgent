@@ -9,12 +9,14 @@ namespace RealEstateAgent
     {
         private int numberOfFloors;
 
-        public TownHouse(int id, Address address, LegalForm legalform, int numberOfRooms, int numberOfFloors) 
-            : base (id, address, legalform, numberOfRooms)
-        {
-            this.numberOfFloors = numberOfFloors;
+        public TownHouse() { }
 
-        }
+        //public TownHouse(int id, Address address, LegalForm legalform, int numberOfRooms, int numberOfFloors) 
+        //    : base (id, address, legalform, numberOfRooms)
+        //{
+        //    this.numberOfFloors = numberOfFloors;
+
+        //}
 
         public int NumberOfFloors {
             get { return numberOfFloors; }

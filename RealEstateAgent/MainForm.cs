@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -117,8 +118,61 @@ namespace RealEstateAgent
 
         }
 
+        private Address readAddress() {
+
+            Address address = new(
+                txt_streetAddress.Text,
+                txt_zipCode.Text,
+                txt_city.Text,
+                (Countries)cmb_country.SelectedValue
+                );
+
+            return address;
+
+        }
+
+        private LegalForm readLegalForm() { 
+        
+        }
+
+        private int readPrice() { 
+
+        }
+
+
+
+
         private void btn_save_Click(object sender, EventArgs e)
         {
+            String selectedEstateType = comboBox1.SelectedItem.ToString();
+
+            switch (selectedEstateType)
+            {
+                case "Warehouse":
+                    estate = new Warehouse();
+                    break;
+
+                case "Shop":
+                    estate = new Shop();
+                    break;
+
+                case "Apartment":
+                    estate = new Apartment();
+                    break;
+
+                case "Villa":
+                    estate = new Villa();
+                    break;
+
+                case "Townhouse":
+                    estate = new TownHouse();
+
+                    Debug.WriteLine(estate.ToString());
+                    break;
+
+            }
+
+
 
         }
 
@@ -192,6 +246,13 @@ namespace RealEstateAgent
 
         }
 
+        private void btn_uploadImage_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("Hej hej");
+
+
+
+        }
     }
 
 }

@@ -9,11 +9,11 @@ namespace RealEstateAgent
     {
 
         private int numberOfRooms;
-        public Residential(int id, Address address, LegalForm legalform, int numberOfRooms) 
-            : base(id, address, legalform)
-        {
-            this.numberOfRooms = numberOfRooms; 
-        }
+        //public Residential(int id, Address address, LegalForm legalform, int numberOfRooms) 
+        //    : base(id, address, legalform)
+        //{
+        //    this.numberOfRooms = numberOfRooms; 
+        //}
         public int NumberOfRooms {
             get { return numberOfRooms; }
             set { numberOfRooms = value; }

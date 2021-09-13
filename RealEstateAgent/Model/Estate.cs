@@ -12,17 +12,17 @@ namespace RealEstateAgent
         private LegalForm legalForm;
         private int price;
 
-        public Estate(int id, Address address, LegalForm legalForm, int price)
-        {
-            this.id = id;
-            this.address = address;
-            this.legalForm = legalForm;
-            this.price = price;
-        }
+        //public Estate(int id, Address address, LegalForm legalForm, int price)
+        //{
+        //    this.id = id;
+        //    this.address = address;
+        //    this.legalForm = legalForm;
+        //    this.price = price;
+        //}
 
         // Constructor to be used when price is yet not set
-        public Estate(int id, Address address, LegalForm legalForm) 
-            : this(id, address, legalForm, 0) { }
+        //public Estate(int id, Address address, LegalForm legalForm) 
+        //    : this(id, address, legalForm, 0) { }
         public int Id { 
             get { return id; }
             set { id = value; }
