@@ -13,7 +13,7 @@ namespace RealEstateAgent
     public partial class MainForm : Form
     {
         private Estate estate;
-
+        
         public MainForm()
         {
             InitializeComponent();
@@ -25,10 +25,11 @@ namespace RealEstateAgent
         public void InitializeGUI() {
             cmb_legalForm.DataSource = Enum.GetValues(typeof(LegalForm));
             cmb_country.DataSource = Enum.GetValues(typeof(Countries));
+            comboBox2.DataSource = Enum.GetValues(typeof(EstateType));
 
         }
 
-        private void addEstate(String estateType)
+     /*   private void addEstate(String estateType)
         {
             
             switch (estateType) {
@@ -48,7 +49,7 @@ namespace RealEstateAgent
     
             }
 
-        }
+        } */
 
         private void createResidential()
         {
@@ -118,6 +119,37 @@ namespace RealEstateAgent
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {        
+            EstateType selectedEstateType = (EstateType)Enum.Parse(typeof(EstateType), comboBox2.SelectedValue.ToString());         
+                
+                switch (selectedEstateType)
+            {
+
+                case EstateType.Commercial:
+                    comboBox1.DataSource = Enum.GetValues(typeof(CommercialType));
+                    lbl_dynamic1.Text = "Square meters:";
+                    break;
+
+                case EstateType.Residential:
+                    comboBox1.DataSource = Enum.GetValues(typeof(ResidentialType));
+                    lbl_dynamic1.Text = "Number of rooms:";
+                    break;
+
+                case EstateType.Institutional:
+                    comboBox1.DataSource = Enum.GetValues(typeof(InstitutionalType));
+                    lbl_dynamic1.Text = "TBA:";
+                    break;
+
+
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }
