@@ -288,6 +288,7 @@ namespace RealEstateAgent
             this.btn_save.TabIndex = 18;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // pnl_northwest
             // 
@@ -313,6 +314,7 @@ namespace RealEstateAgent
             this.pnl_northwest.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.pnl_northwest.Size = new System.Drawing.Size(473, 219);
             this.pnl_northwest.TabIndex = 1;
+            this.pnl_northwest.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_northwest_Paint_1);
             // 
             // lbl_estateType
             // 
@@ -419,6 +421,7 @@ namespace RealEstateAgent
             this.btn_edit.TabIndex = 0;
             this.btn_edit.Text = "Edit";
             this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // btn_remove
             // 
@@ -488,6 +491,7 @@ namespace RealEstateAgent
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MainForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.pnl_southwest.ResumeLayout(false);
             this.pnl_southwest.PerformLayout();

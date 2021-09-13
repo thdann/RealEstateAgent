@@ -12,6 +12,8 @@ namespace RealEstateAgent
 {
     public partial class MainForm : Form
     {
+        private Estate estate;
+
         public MainForm()
         {
             InitializeComponent();
@@ -26,9 +28,31 @@ namespace RealEstateAgent
 
         }
 
-        private void addEstate()
+        private void addEstate(String estateType)
         {
-            //Ta reda på vilken typ av boende det är
+            
+            switch (estateType) {
+
+                case "Residential":
+                    createResidential();
+                    break;
+
+                case "Institutional":
+                    createInstitutional();
+                    break;
+
+                case "Commercial":
+                    createCommericial();
+                    break;
+
+    
+            }
+
+        }
+
+        private void createResidential()
+        {
+
         }
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
@@ -72,6 +96,26 @@ namespace RealEstateAgent
         }
 
         private void btn_remove_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnl_northwest_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
