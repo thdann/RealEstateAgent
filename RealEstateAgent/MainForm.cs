@@ -26,6 +26,11 @@ namespace RealEstateAgent
 
         }
 
+        private void addEstate()
+        {
+            //Ta reda på vilken typ av boende det är
+        }
+
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -62,6 +67,11 @@ namespace RealEstateAgent
         }
 
         private void cmb_legalForm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_remove_Click(object sender, EventArgs e)
         {
 
         }

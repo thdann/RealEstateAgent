@@ -429,6 +429,7 @@ namespace RealEstateAgent
             this.btn_remove.TabIndex = 1;
             this.btn_remove.Text = "Remove";
             this.btn_remove.UseVisualStyleBackColor = true;
+            this.btn_remove.Click += new System.EventHandler(this.btn_remove_Click);
             // 
             // dataGridView1
             // 

@@ -17,12 +17,7 @@ namespace RealEstateAgent
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            MainForm mainForm = new MainForm();
-            new Controller(mainForm);
-
-            //Gui opens
-            Application.Run(mainForm);
+            Application.Run(new MainForm());
             
         }
     }
