@@ -93,6 +93,17 @@ namespace RealEstateAgent
 
         private void cmb_legalForm_SelectedIndexChanged(object sender, EventArgs e)
         {
+            LegalForm selectedLegalForm = (LegalForm)Enum.Parse(typeof(LegalForm), cmb_legalForm.SelectedValue.ToString());
+
+            if (selectedLegalForm.Equals(LegalForm.Rental))
+            {
+                lbl_price.Text = "Price per month: ";
+            }
+            else 
+            {
+             lbl_price.Text = "Price: ";
+            }
+
 
         }
 
