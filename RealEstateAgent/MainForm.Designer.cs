@@ -45,8 +45,6 @@ namespace RealEstateAgent
             this.txt_dynamic2 = new System.Windows.Forms.TextBox();
             this.lbl_dynamic1 = new System.Windows.Forms.Label();
             this.lbl_dynamic2 = new System.Windows.Forms.Label();
-            this.lbl_dynamic3 = new System.Windows.Forms.Label();
-            this.txt_dynamic3 = new System.Windows.Forms.TextBox();
             this.btn_save = new System.Windows.Forms.Button();
             this.pnl_northwest = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_estateType = new System.Windows.Forms.Label();
@@ -112,8 +110,6 @@ namespace RealEstateAgent
             this.pnl_southwest.Controls.Add(this.txt_dynamic2, 1, 6);
             this.pnl_southwest.Controls.Add(this.lbl_dynamic1, 0, 5);
             this.pnl_southwest.Controls.Add(this.lbl_dynamic2, 0, 6);
-            this.pnl_southwest.Controls.Add(this.lbl_dynamic3, 0, 7);
-            this.pnl_southwest.Controls.Add(this.txt_dynamic3, 1, 7);
             this.pnl_southwest.Controls.Add(this.btn_save, 1, 8);
             this.pnl_southwest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_southwest.Location = new System.Drawing.Point(3, 228);
@@ -263,28 +259,10 @@ namespace RealEstateAgent
             this.lbl_dynamic2.TabIndex = 15;
             this.lbl_dynamic2.Text = "DynamicLabel2";
             // 
-            // lbl_dynamic3
-            // 
-            this.lbl_dynamic3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_dynamic3.AutoSize = true;
-            this.lbl_dynamic3.Location = new System.Drawing.Point(3, 238);
-            this.lbl_dynamic3.Name = "lbl_dynamic3";
-            this.lbl_dynamic3.Size = new System.Drawing.Size(230, 20);
-            this.lbl_dynamic3.TabIndex = 16;
-            this.lbl_dynamic3.Text = "DynamicLabel3";
-            // 
-            // txt_dynamic3
-            // 
-            this.txt_dynamic3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_dynamic3.Location = new System.Drawing.Point(239, 235);
-            this.txt_dynamic3.Name = "txt_dynamic3";
-            this.txt_dynamic3.Size = new System.Drawing.Size(231, 27);
-            this.txt_dynamic3.TabIndex = 17;
-            // 
             // btn_save
             // 
             this.btn_save.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_save.Location = new System.Drawing.Point(239, 268);
+            this.btn_save.Location = new System.Drawing.Point(239, 235);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(231, 50);
             this.btn_save.TabIndex = 18;
@@ -561,8 +539,6 @@ namespace RealEstateAgent
         private System.Windows.Forms.TextBox txt_dynamic2;
         private System.Windows.Forms.Label lbl_dynamic1;
         private System.Windows.Forms.Label lbl_dynamic2;
-        private System.Windows.Forms.Label lbl_dynamic3;
-        private System.Windows.Forms.TextBox txt_dynamic3;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;

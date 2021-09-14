@@ -7,7 +7,7 @@ namespace RealEstateAgent
     public partial class MainForm : Form
     {
         private Estate estate;
-        
+
         public MainForm()
         {
             InitializeComponent();
@@ -71,9 +71,9 @@ namespace RealEstateAgent
             {
                 lbl_price.Text = "Price per month: ";
             }
-            else 
+            else
             {
-             lbl_price.Text = "Price: ";
+                lbl_price.Text = "Price: ";
             }
 
 
@@ -99,10 +99,12 @@ namespace RealEstateAgent
             {
                 return resultat;
             }
-            else return - 1;
-        
+            else
+                MessageBox.Show("The id is not a valid id!");
+            return 0;
+
         }
-        
+
         private Address readAddress() {
 
             Address address = new(
@@ -115,28 +117,63 @@ namespace RealEstateAgent
             return address;
 
         }
-        
+
         private LegalForm readLegalForm() {
 
             // Kontrollera så att inte -1?
             return (LegalForm)cmb_legalForm.SelectedValue;
-        
+
         }
 
         private int readPrice() {
-            return Convert.ToInt32(txt_price.Text);
+            int resultat;
+
+            bool success = int.TryParse(txt_id.Text, out resultat);
+
+            if (success)
+            {
+                return resultat;
+            }
+            else
+            { 
+                MessageBox.Show("The price is not a valid price!");
+                return 0;
+            }
         }
 
         private int readAttribute1() {
-            return Convert.ToInt32(txt_dynamic1.Text);
+            int resultat;
 
+            bool success = int.TryParse(txt_id.Text, out resultat);
+
+            if (success)
+            {
+                return resultat;
+            }
+            else
+            {
+                MessageBox.Show(""); //TODO ska vi skippa denna pga svår att skräddarsy?
+                return 0;
+            }
         }
 
-        private int readAttribute2()
-        {
-            return Convert.ToInt32(txt_dynamic2.Text);
 
+        private int readAttribute2() {
+            int resultat;
+
+            bool success = int.TryParse(txt_id.Text, out resultat);
+
+            if (success)
+            {
+                return resultat;
+            }
+            else
+            {
+                MessageBox.Show(""); //Skippa denna med?
+                return 0;
+            }
         }
+
 
         private void btn_save_Click(object sender, EventArgs e)
         {
@@ -154,7 +191,6 @@ namespace RealEstateAgent
                     setEstateAttributes();
                     break;
 
-
                  case "Apartment":
                     estate = new Apartment();
                     setEstateAttributes();
@@ -167,18 +203,10 @@ namespace RealEstateAgent
              
                 case "Townhouse":
                     estate = new TownHouse();
-                    setEstateAttributes();
-                    
-
-                    Debug.WriteLine("Du är i townhouse");
-                    Debug.WriteLine(estate.ToString());
-                    
-                    // Sätt attributen som är för townhouse men inte det andra.
-                    // readAttribute1();
+                    setEstateAttributes():
                     break;
 
             }
-
 
         }
 
@@ -237,37 +265,30 @@ namespace RealEstateAgent
             {
                 case "Warehouse":
                     lbl_dynamic2.Text = "Number of shelves:";
-                    lbl_dynamic3.Text = "Finns ej?";
                     break;
 
                 case "Shop":
                     lbl_dynamic2.Text = "Number of Electrical sockets:";
-                    lbl_dynamic3.Text = "Finns ej?";
                     break;
 
                 case "Apartment":
                     lbl_dynamic2.Text = "Floor number:";
-                    lbl_dynamic3.Text = "Finns ej?";
                     break;
 
                 case "Villa":
                     lbl_dynamic2.Text = "Garden area:";
-                    lbl_dynamic3.Text = "Finns ej?";
                     break;
 
                 case "Townhouse":
                     lbl_dynamic2.Text = "Number of floors:";
-                    lbl_dynamic3.Text = "Finns ej?";
                     break;
                
                 case "University":
                     lbl_dynamic2.Text = "Number of Offices:";
-                    lbl_dynamic3.Text = "Finns ej?";
                     break;
 
                 case "School":
                     lbl_dynamic2.Text = "Number of classrooms:";
-                    lbl_dynamic3.Text = "Finns ej?";
                     break;
 
             }
