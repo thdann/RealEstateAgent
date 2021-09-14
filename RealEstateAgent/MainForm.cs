@@ -81,7 +81,7 @@ namespace RealEstateAgent
 
         private void btn_remove_Click(object sender, EventArgs e)
         {
-
+            estate = null;
         }
 
         private void pnl_northwest_Paint_1(object sender, PaintEventArgs e)
@@ -91,7 +91,15 @@ namespace RealEstateAgent
 
         private int readId() {
 
-           return Convert.ToInt32(txt_dynamic3.Text);
+            int resultat;
+
+            bool success = int.TryParse(txt_id.Text, out resultat);
+
+            if (success)
+            {
+                return resultat;
+            }
+            else return - 1;
         
         }
         
@@ -124,30 +132,44 @@ namespace RealEstateAgent
 
         }
 
+        private int readAttribute2()
+        {
+            return Convert.ToInt32(txt_dynamic2.Text);
+
+        }
+
         private void btn_save_Click(object sender, EventArgs e)
         {
             String selectedEstateType = comboBox1.SelectedItem.ToString();
 
             switch (selectedEstateType)
             {
-            /*    case "Warehouse":
+                case "Warehouse":
                     estate = new Warehouse();
+                    setEstateAttributes();
                     break;
 
-                case "Shop":
+                 case "Shop":
                     estate = new Shop();
+                    setEstateAttributes();
                     break;
 
-                case "Apartment":
+
+                 case "Apartment":
                     estate = new Apartment();
+                    setEstateAttributes();
                     break;
 
-                case "Villa":
+                 case "Villa":
                     estate = new Villa();
+                    setEstateAttributes();
                     break;
-            */
+             
                 case "Townhouse":
                     estate = new TownHouse();
+                    setEstateAttributes();
+                    
+
                     Debug.WriteLine("Du är i townhouse");
                     Debug.WriteLine(estate.ToString());
                     
@@ -157,11 +179,16 @@ namespace RealEstateAgent
 
             }
 
+
+        }
+
+        public void setEstateAttributes() {
+
             estate.Id = readId();
             estate.Address = readAddress();
             estate.LegalForm = readLegalForm();
             estate.Price = readPrice();
-            
+            estate.EstateAbstractMedthod(readAttribute1(), readAttribute2());
 
         }
 
@@ -175,6 +202,7 @@ namespace RealEstateAgent
 
         }
 
+        //Combobox for EstateType (Commercial/Resedential/Institutional
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {        
             EstateType selectedEstateType = (EstateType)Enum.Parse(typeof(EstateType), comboBox2.SelectedValue.ToString());         
@@ -194,12 +222,13 @@ namespace RealEstateAgent
 
                 case EstateType.Institutional:
                     comboBox1.DataSource = Enum.GetValues(typeof(InstitutionalType));
-                    lbl_dynamic1.Text = "TBA:";
+                    lbl_dynamic1.Text = "Number of people Allowed:";
                     break;
 
             }
         }
 
+        //Combobox for buildingtype - base classes (Villa, Shop, School etc.)
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             String selectedEstateType = comboBox1.SelectedItem.ToString();
@@ -207,17 +236,17 @@ namespace RealEstateAgent
             switch (selectedEstateType)
             {
                 case "Warehouse":
-                    lbl_dynamic2.Text = "Has office:";
+                    lbl_dynamic2.Text = "Number of shelves:";
                     lbl_dynamic3.Text = "Finns ej?";
                     break;
 
                 case "Shop":
-                    lbl_dynamic2.Text = "Has furniture:";
+                    lbl_dynamic2.Text = "Number of Electrical sockets:";
                     lbl_dynamic3.Text = "Finns ej?";
                     break;
 
                 case "Apartment":
-                    lbl_dynamic2.Text = "Has elevator:";
+                    lbl_dynamic2.Text = "Floor number:";
                     lbl_dynamic3.Text = "Finns ej?";
                     break;
 
@@ -228,6 +257,16 @@ namespace RealEstateAgent
 
                 case "Townhouse":
                     lbl_dynamic2.Text = "Number of floors:";
+                    lbl_dynamic3.Text = "Finns ej?";
+                    break;
+               
+                case "University":
+                    lbl_dynamic2.Text = "Number of Offices:";
+                    lbl_dynamic3.Text = "Finns ej?";
+                    break;
+
+                case "School":
+                    lbl_dynamic2.Text = "Number of classrooms:";
                     lbl_dynamic3.Text = "Finns ej?";
                     break;
 

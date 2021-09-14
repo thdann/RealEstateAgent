@@ -10,5 +10,8 @@ namespace RealEstateAgent
         public int Id { get; set; }
 
         public Address Address { get; set; }
+
+
+        // public void showObjectInGui() {}
     }
 }

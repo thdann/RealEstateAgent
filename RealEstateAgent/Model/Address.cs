@@ -7,11 +7,16 @@ namespace RealEstateAgent
 {
     public class Address
     {
+        //Instancevariables specific to all Address objects
         private String street;
         private String zipCode;
         private String city;
         private Countries country;
 
+        //Default constructor
+        public Address() { }
+
+        //Constructor with parameters
         public Address(String street, String zipCode, String city, Countries country)
         {
             this.street = street;

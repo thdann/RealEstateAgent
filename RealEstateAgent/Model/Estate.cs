@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace RealEstateAgent
 {
@@ -12,22 +13,18 @@ namespace RealEstateAgent
         private LegalForm legalForm;
         private int price;
 
-        public Estate()
-        {
+        //Constructors
+        public Estate() { }
 
+        public Estate(int id, Address address, LegalForm legalForm, int price)
+        {
+            this.id = id;
+            this.address = address;
+            this.legalForm = legalForm;
+            this.price = price;
         }
 
-        //public Estate(int id, Address address, LegalForm legalForm, int price)
-        //{
-        //    this.id = id;
-        //    this.address = address;
-        //    this.legalForm = legalForm;
-        //    this.price = price;
-        //}
-
-        // Constructor to be used when price is yet not set
-        //public Estate(int id, Address address, LegalForm legalForm) 
-        //    : this(id, address, legalForm, 0) { }
+        //Properties - get/set for private instancevariables (encapsulation)
         public int Id { 
             get { return id; }
             set { id = value; }
@@ -39,10 +36,21 @@ namespace RealEstateAgent
         public LegalForm LegalForm {
             get { return legalForm; }
             set { legalForm = value; } 
-        }   
+        }
+        public int Price {
+            get { return price; }
+            set { price = value; }        
+        }
+
+        // Abstract method to be implemented downwards in subclasses
+        public abstract void EstateAbstractMedthod(int var1, int var2);
+
+        public override String ToString() {
+
+            return id.ToString();
         
-        // Abstract method - price is determened on lower level
-        public abstract int Price { get; set; }
+        
+        }
 
     }
 }

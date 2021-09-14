@@ -271,7 +271,7 @@ namespace RealEstateAgent
             this.lbl_dynamic3.Name = "lbl_dynamic3";
             this.lbl_dynamic3.Size = new System.Drawing.Size(230, 20);
             this.lbl_dynamic3.TabIndex = 16;
-            this.lbl_dynamic3.Text = "Id";
+            this.lbl_dynamic3.Text = "DynamicLabel3";
             // 
             // txt_dynamic3
             // 
@@ -395,11 +395,11 @@ namespace RealEstateAgent
             // 
             // lbl_uploadImages
             // 
+            this.lbl_uploadImages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_uploadImages.AutoSize = true;
-            this.lbl_uploadImages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_uploadImages.Location = new System.Drawing.Point(3, 135);
+            this.lbl_uploadImages.Location = new System.Drawing.Point(3, 142);
             this.lbl_uploadImages.Name = "lbl_uploadImages";
-            this.lbl_uploadImages.Size = new System.Drawing.Size(230, 35);
+            this.lbl_uploadImages.Size = new System.Drawing.Size(230, 20);
             this.lbl_uploadImages.TabIndex = 8;
             this.lbl_uploadImages.Text = "Image:";
             // 

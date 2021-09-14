@@ -1,25 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Windows.Forms;
 
 namespace RealEstateAgent
 {
-    public class School : Institutional { 
-
-        public School()
+    public class School : Institutional 
     {
+        // Instancevaiables specific to all School estates
+        private int numberOfClassrooms;
 
-    }
-    
-      /*  public School(int id, Address address, LegalForm legalForm, int price) 
-            : base(id, address, legalForm, price)
+        //Constructors
+        public School(){ }
+        public School(int id, Address address, LegalForm legalForm, int price, int numberOfPeopleAllowed, int numberOfClassrooms) : 
+            base (id,address, legalForm, price, numberOfPeopleAllowed) 
         {
-        } */
+            this.numberOfClassrooms = numberOfClassrooms;
+        
+        }
 
-        //ToDO implementera price här
-        public override int Price { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); }
+        //Property - get/set for private instancevariables (encapsulation)
+        public int NumberOfClassrooms
+        {
+            get { return numberOfClassrooms; }
+            set { numberOfClassrooms = value; }
+        
+        }
+
+        //Abstract method inhereted from base class and implemented here
+        public override void InstitutionallAbstractMedthod(int var2)
+        {
+            this.NumberOfClassrooms = var2;
+        }
     }
 }

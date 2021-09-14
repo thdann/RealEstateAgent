@@ -2,32 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace RealEstateAgent
 {
     public class Shop : Commercial
     {
-        private bool hasFurnishing;
+        // Instancevaiables specific to all Shop estates
+        private int numberOfElectricalSockets;
 
-        public Shop()
-        {
+        //Constructors
+        public Shop() { }
 
+        public Shop(int id, Address address, LegalForm legalForm, int price, int squareMeters, int numberOfElectricalSockets) 
+            : base(id, address, legalForm, price, squareMeters)
+        {
+            this.numberOfElectricalSockets = numberOfElectricalSockets;        
         }
 
-       /* public Shop (int id, Address address, LegalForm legalForm, double squareMeter, bool hasFurnishing)
-            : base (id, address, legalForm, squareMeter)
+        //Property - get/set for private instancevariables (encapsulation)
+        public int NumberOfElectricalSockets 
         {
-            this.hasFurnishing = hasFurnishing;
+            get { return numberOfElectricalSockets; }
+            set { numberOfElectricalSockets = value; }        
         }
-       */
-        public bool HasFurnishing
+
+        //Abstract method inhereted from base class and implemented here
+        public override void CommercialAbstractMedthod(int var2)
         {
-            get { return hasFurnishing; }
-            set { hasFurnishing = value; }
+            this.NumberOfElectricalSockets = var2;
         }
-        public override int Price { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); 
-        }
+
     }
 }

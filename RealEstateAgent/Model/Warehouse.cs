@@ -2,33 +2,46 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace RealEstateAgent
 {
     public class Warehouse : Commercial
     {
-        private bool haveOffice;
+        // Instancevaiables specific to all Warehouse estates
+        private int numberOfShelves;
 
-        public Warehouse()
-        {
+        //Constructors
+        public Warehouse() { }
 
-        }
-     
-       /* public Warehouse(int id, Address address, LegalForm legalForm, double squareMeter, bool haveOffice)
-            : base (id, address, legalForm, squareMeter)
+        public Warehouse(int id, Address address, LegalForm legalForm, int price, int squareMeters, int numberofShelves) 
+            : base(id, address, legalForm, price, squareMeters)
         {
-            this.HaveOffice = haveOffice;
-        } */
-
-        public bool HaveOffice 
-        {
-            get { return haveOffice; }
-            set { haveOffice = value;} 
+            this.numberOfShelves = numberofShelves;        
         }
 
-        public override int Price { 
-            get => throw new NotImplementedException(); 
-            set => throw new NotImplementedException(); 
+        //Property - get/set for private instancevariables (encapsulation)
+        public int NumberOfShelves {
+            get { return numberOfShelves; }
+            set { numberOfShelves = value; } 
         }
+
+        //Abstract method inhereted from base class and implemented here
+        public override void CommercialAbstractMedthod(int var2)
+        {
+            this.NumberOfShelves = var2;
+        }
+
+
+
+
+
+
+        /* public Warehouse(int id, Address address, LegalForm legalForm, double squareMeter, bool haveOffice)
+     : base (id, address, legalForm, squareMeter)
+ {
+     this.HaveOffice = haveOffice;
+ } */
+
     }
 }

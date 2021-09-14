@@ -2,35 +2,35 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace RealEstateAgent
 {
     public class Apartment : Residential
     {
-        private bool hasElevator;
+        // Instancevaiables specific to all Apartment estates
+        private int floor;
 
-        public Apartment()
+        //Constructors
+        public Apartment() { }
+        public Apartment(int id, Address address, LegalForm legalForm, int price, int numberOfRooms, int floor ) 
+            : base(id, address, legalForm, price, numberOfRooms) 
         {
-
+            this.floor = floor;        
         }
 
-      /*  public Apartment(int id, Address address, LegalForm legalform, int numberOfRooms, bool hasElevator) 
-            : base(id, address, legalform, numberOfRooms)
+        //Property - get/set for private instancevariables (encapsulation)
+        public int Floor
         {
-            this.hasElevator = hasElevator;
-        } */
-
-        public bool HasElevator
-        {
-            get { return hasElevator; }
-            set { hasElevator = value; }
+            get { return floor; }
+            set { floor = value; }
         }
 
-        // TODO: implementera denna metod här!
-        public override int Price
+        //Abstract method inhereted from base class and implemented here
+        public override void ResidentialAbstractMedthod(int var2)
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            this.Floor = var2;
         }
     }
+
  }
