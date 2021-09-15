@@ -18,21 +18,26 @@ namespace RealEstateAgent
         }
 
         //Property - get/set for private instancevariables (encapsulation)
-        public int NumberOfPeopleAllowed 
+   /*     public int NumberOfPeopleAllowed 
         {
             get { return numberOfPeopleAllowed; }
             set { numberOfPeopleAllowed = value; }
         }
 
         //Abstract method inhereted from base class and implemented here
-        public override void EstateAbstractMedthod(int var1, int var2)
+  /*      public override void EstateAbstractMedthod(int var1, int var2)
         {
             this.NumberOfPeopleAllowed = var1;
             InstitutionallAbstractMedthod(var2);
-        }
+        } */
 
+        public override int Attribute1
+        {
+            get { return numberOfPeopleAllowed; }
+            set { numberOfPeopleAllowed = value; }
+        }
         // Abstract method to be implemented downwards in subclasses
-        public abstract void InstitutionallAbstractMedthod(int var2);
+    //    public abstract void InstitutionallAbstractMedthod(int var2);
 
     }
 }

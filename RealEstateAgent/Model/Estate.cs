@@ -50,8 +50,18 @@ namespace RealEstateAgent
 
         }
 
+        public abstract int Attribute1
+        {
+            get; set;
+        }
+
+        public abstract int Attribute2
+        {
+            get; set;
+        }
+
         // Abstract method to be implemented downwards in subclasses
-        public abstract void EstateAbstractMedthod(int var1, int var2);
+    //    public abstract void EstateAbstractMedthod(int var1, int var2);
 
         public override string ToString()
         {

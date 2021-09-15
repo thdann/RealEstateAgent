@@ -21,15 +21,21 @@ namespace RealEstateAgent
         }
 
         //Property - get/set for private instancevariables (encapsulation)
-        public int NumberOfFloors {
+      /*  public int NumberOfFloors {
+            get { return numberOfFloors; }
+            set { numberOfFloors = value; }
+        } */
+
+        public override int Attribute2
+        {
             get { return numberOfFloors; }
             set { numberOfFloors = value; }
         }
 
         //Abstract method inhereted from base class and implemented here
-        public override void ResidentialAbstractMedthod(int var2)
+     /*   public override void ResidentialAbstractMedthod(int var2)
         {
             this.NumberOfFloors = var2;
-        }
+        } */
     }
 }

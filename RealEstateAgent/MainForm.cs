@@ -24,10 +24,6 @@ namespace RealEstateAgent
 
         }
 
-        private void createResidential()
-        {
-
-        }
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
@@ -149,7 +145,7 @@ namespace RealEstateAgent
         private int readAttribute1() {
             int resultat;
 
-            bool success = int.TryParse(txt_id.Text, out resultat);
+            bool success = int.TryParse(txt_dynamic1.Text, out resultat);
 
             if (success)
             {
@@ -165,7 +161,7 @@ namespace RealEstateAgent
         private int readAttribute2() {
             int resultat;
 
-            bool success = int.TryParse(txt_id.Text, out resultat);
+            bool success = int.TryParse(txt_dynamic2.Text, out resultat);
 
             if (success)
             {
@@ -196,7 +192,6 @@ namespace RealEstateAgent
 
                  case "Shop":
                     estate = new Shop();
-                  //  setEstateAttributes();
                     break;
 
                  case "Apartment":
@@ -250,7 +245,9 @@ namespace RealEstateAgent
             estate.Address = readAddress();
             estate.LegalForm = readLegalForm();
             estate.Price = readPrice();
-            estate.EstateAbstractMedthod(readAttribute1(), readAttribute2());
+           // estate.EstateAbstractMedthod(readAttribute1(), readAttribute2());
+            estate.Attribute1 = readAttribute1();
+            estate.Attribute2 = readAttribute2();
             estate.EstateImage = readImage();
             Debug.WriteLine("Metoden setEstateAttributed(): Denna bild är inlagt i estateobjektet: " + estate.EstateImage);
 
@@ -357,8 +354,9 @@ namespace RealEstateAgent
 
                 //Dessa två är beroende på vilken typ av objekt som skapats, går ej att komma åt dess specifika properties från estateobjekten. 
                 //txt_dynamic1.Text = selectedObject. 
-                //txt_dynamic2.Text = selectedObject. 
-
+                txt_dynamic1.Text = selectedObject.Attribute1.ToString();
+                txt_dynamic2.Text = selectedObject.Attribute2.ToString();
+                
 
                 // Hur fixa comboboxarna utifrån type och basetype när enum i comboboxarna?
                 //comboBox1.SelectedItem =selectedObject.GetType().BaseType; // Estatetype
