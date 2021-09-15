@@ -343,9 +343,11 @@ namespace RealEstateAgent
             cmb_country.SelectedItem = selectedObject.Address.Country;
             cmb_legalForm.SelectedItem = selectedObject.LegalForm;
 
-
-            //comboBox1.SelectedItem =selectedObject.GetType().BaseType; // Estatetype, hur får vi fram??
+            // Hur fixa comboboxarna utifrån type och basetype när enum i comboboxarna?
+            //comboBox1.SelectedItem =selectedObject.GetType().BaseType; // Estatetype
             //comboBox2.SelectedItem = selectedObject.GetType(); // Detta är om villa/Skola/shop etc. "Buildingtype"
+
+            //disableTextFields();
         }
     }
 

@@ -49,17 +49,16 @@ namespace RealEstateAgent
             set { estateImage = value; }
 
         }
+
         // Abstract method to be implemented downwards in subclasses
         public abstract void EstateAbstractMedthod(int var1, int var2);
 
         public override string ToString()
         {
-           
-           
-            string strOut = String.Format(" {0} {1} {2} {3}",
-               id, LegalForm, price, address.ToString());
 
-            strOut = strOut.ToUpper();
+            string strOut = String.Format(" {0}, {1}, {2}, {3}",
+              id, LegalForm, Price, address.ToString());
+
             return strOut;
         }
 
