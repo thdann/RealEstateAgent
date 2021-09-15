@@ -220,7 +220,7 @@ namespace RealEstateAgent
             }
 
             setEstateAttributes();
-            lst_Estates.Items.Add(estate.ToString());
+            lst_Estates.Items.Add(estate);
             clearTextFields();
         }
 
@@ -252,7 +252,7 @@ namespace RealEstateAgent
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-
+            enableTextFields();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -334,21 +334,63 @@ namespace RealEstateAgent
 
         private void lst_Estates_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             Estate selectedObject = (Estate)lst_Estates.SelectedItem;
+            if (selectedObject != null)
+            {
+                txt_id.Text = selectedObject.Id.ToString();
+                txt_streetAddress.Text = selectedObject.Address.Street.ToString();
+                txt_zipCode.Text = selectedObject.Address.ZipCode.ToString();
+                txt_city.Text = selectedObject.Address.City.ToString();
+                cmb_country.SelectedItem = selectedObject.Address.Country;
+                cmb_legalForm.SelectedItem = selectedObject.LegalForm;
 
-            txt_id.Text = selectedObject.Id.ToString();
-            txt_streetAddress.Text = selectedObject.Address.Street.ToString();
-            txt_zipCode.Text = selectedObject.Address.ZipCode.ToString();
-            txt_city.Text = selectedObject.Address.City.ToString();
-            cmb_country.SelectedItem = selectedObject.Address.Country;
-            cmb_legalForm.SelectedItem = selectedObject.LegalForm;
+                // Hur fixa comboboxarna utifrån type och basetype när enum i comboboxarna?
+                //comboBox1.SelectedItem =selectedObject.GetType().BaseType; // Estatetype
+                //comboBox2.SelectedItem = selectedObject.GetType(); // Detta är om villa/Skola/shop etc. "Buildingtype"
 
-            // Hur fixa comboboxarna utifrån type och basetype när enum i comboboxarna?
-            //comboBox1.SelectedItem =selectedObject.GetType().BaseType; // Estatetype
-            //comboBox2.SelectedItem = selectedObject.GetType(); // Detta är om villa/Skola/shop etc. "Buildingtype"
+                disableTextFields();
 
-            //disableTextFields();
+            }
+            else {
+
+                enableTextFields();
+
+                   }
+
         }
+
+        public void disableTextFields() {
+            comboBox1.Enabled = false;
+            comboBox2.Enabled = false;
+            cmb_legalForm.Enabled = false;
+            txt_id.Enabled = false;
+            btn_upploadImages.Enabled = false;
+            txt_streetAddress.Enabled = false;
+            txt_zipCode.Enabled = false;
+            txt_city.Enabled = false;
+            cmb_country.Enabled = false;
+            txt_price.Enabled = false;
+            txt_dynamic1.Enabled = false;
+            txt_dynamic2.Enabled = false;
+        }
+
+        public void enableTextFields()
+        {
+            comboBox1.Enabled = true;
+            comboBox2.Enabled = true;
+            cmb_legalForm.Enabled = true;
+            txt_id.Enabled = true;
+            btn_upploadImages.Enabled = true;
+            txt_streetAddress.Enabled = true;
+            txt_zipCode.Enabled = true;
+            txt_city.Enabled = true;
+            cmb_country.Enabled = true;
+            txt_price.Enabled = true;
+            txt_dynamic1.Enabled = true;
+            txt_dynamic2.Enabled = true;
+        }
+
     }
 
 }
