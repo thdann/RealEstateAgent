@@ -60,16 +60,13 @@ namespace RealEstateAgent
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_edit = new System.Windows.Forms.Button();
             this.btn_remove = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lst_Estates = new System.Windows.Forms.ListBox();
             this.pBox_estateImage = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnl_southwest.SuspendLayout();
             this.pnl_northwest.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_estateImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -390,6 +387,7 @@ namespace RealEstateAgent
             this.btn_upploadImages.TabIndex = 9;
             this.btn_upploadImages.Text = "Upload image";
             this.btn_upploadImages.UseVisualStyleBackColor = true;
+            this.btn_upploadImages.Click += new System.EventHandler(this.btn_upploadImages_Click);
             // 
             // txt_id
             // 
@@ -406,7 +404,7 @@ namespace RealEstateAgent
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.btn_edit, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.btn_remove, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.dataGridView1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lst_Estates, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(482, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -438,44 +436,16 @@ namespace RealEstateAgent
             this.btn_remove.UseVisualStyleBackColor = true;
             this.btn_remove.Click += new System.EventHandler(this.btn_remove_Click);
             // 
-            // dataGridView1
+            // lst_Estates
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.type,
-            this.address});
-            this.tableLayoutPanel2.SetColumnSpan(this.dataGridView1, 2);
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(467, 169);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // id
-            // 
-            this.id.HeaderText = "Id";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // type
-            // 
-            this.type.HeaderText = "Type";
-            this.type.MinimumWidth = 6;
-            this.type.Name = "type";
-            this.type.ReadOnly = true;
-            // 
-            // address
-            // 
-            this.address.HeaderText = "Street address";
-            this.address.MinimumWidth = 6;
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.lst_Estates, 2);
+            this.lst_Estates.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lst_Estates.FormattingEnabled = true;
+            this.lst_Estates.ItemHeight = 20;
+            this.lst_Estates.Location = new System.Drawing.Point(3, 3);
+            this.lst_Estates.Name = "lst_Estates";
+            this.lst_Estates.Size = new System.Drawing.Size(467, 169);
+            this.lst_Estates.TabIndex = 2;
             // 
             // pBox_estateImage
             // 
@@ -486,6 +456,10 @@ namespace RealEstateAgent
             this.pBox_estateImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBox_estateImage.TabIndex = 2;
             this.pBox_estateImage.TabStop = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // MainForm
             // 
@@ -502,7 +476,6 @@ namespace RealEstateAgent
             this.pnl_northwest.ResumeLayout(false);
             this.pnl_northwest.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_estateImage)).EndInit();
             this.ResumeLayout(false);
 
@@ -532,10 +505,6 @@ namespace RealEstateAgent
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button btn_remove;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.TextBox txt_dynamic2;
         private System.Windows.Forms.Label lbl_dynamic1;
         private System.Windows.Forms.Label lbl_dynamic2;
@@ -546,6 +515,8 @@ namespace RealEstateAgent
         private System.Windows.Forms.Label lbl_uploadImages;
         private System.Windows.Forms.Button btn_upploadImages;
         private System.Windows.Forms.TextBox txt_id;
+        private System.Windows.Forms.ListBox lst_Estates;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

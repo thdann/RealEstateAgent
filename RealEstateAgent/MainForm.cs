@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace RealEstateAgent
@@ -81,7 +82,10 @@ namespace RealEstateAgent
 
         private void btn_remove_Click(object sender, EventArgs e)
         {
+            int selectedIndex = lst_Estates.SelectedIndex;
+            lst_Estates.Items.RemoveAt(selectedIndex);
             estate = null;
+            
         }
 
         private void pnl_northwest_Paint_1(object sender, PaintEventArgs e)
@@ -152,7 +156,6 @@ namespace RealEstateAgent
             }
             else
             {
-                MessageBox.Show(""); //TODO ska vi skippa denna pga svår att skräddarsy?
                 return 0;
             }
         }
@@ -169,9 +172,13 @@ namespace RealEstateAgent
             }
             else
             {
-                MessageBox.Show(""); //Skippa denna med?
                 return 0;
             }
+        }
+
+        private Image readImage()
+        {
+            return pBox_estateImage.Image;
         }
 
 
@@ -183,31 +190,38 @@ namespace RealEstateAgent
             {
                 case "Warehouse":
                     estate = new Warehouse();
-                    setEstateAttributes();
                     break;
 
                  case "Shop":
                     estate = new Shop();
-                    setEstateAttributes();
+                  //  setEstateAttributes();
                     break;
 
                  case "Apartment":
                     estate = new Apartment();
-                    setEstateAttributes();
                     break;
 
                  case "Villa":
                     estate = new Villa();
-                    setEstateAttributes();
                     break;
              
                 case "Townhouse":
                     estate = new TownHouse();
-                    setEstateAttributes():
+                    break;
+
+                case "University":
+                    estate = new University();
+                    break;
+
+                case "School":
+                    estate = new School();
                     break;
 
             }
 
+            setEstateAttributes();
+            lst_Estates.Items.Add(estate.ToString());
+           
         }
 
         public void setEstateAttributes() {
@@ -217,6 +231,7 @@ namespace RealEstateAgent
             estate.LegalForm = readLegalForm();
             estate.Price = readPrice();
             estate.EstateAbstractMedthod(readAttribute1(), readAttribute2());
+            estate.EstateImage = readImage();
 
         }
 
@@ -297,10 +312,15 @@ namespace RealEstateAgent
 
         private void btn_uploadImage_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("Hej hej");
+            
 
+        }
 
-
+        private void btn_upploadImages_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            string filePath = openFileDialog1.FileName;
+            pBox_estateImage.Image = Image.FromFile(filePath);
         }
     }
 

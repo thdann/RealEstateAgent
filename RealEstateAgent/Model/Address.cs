@@ -24,6 +24,13 @@ namespace RealEstateAgent
             this.city = city;
             this.country = country;
         }
+
+        public override string ToString()
+        {
+            string strOut = string.Format("{0}, {1}, {2}, {3}", street, zipCode, city, country);
+            return strOut;
+
+        }
     }
 
 

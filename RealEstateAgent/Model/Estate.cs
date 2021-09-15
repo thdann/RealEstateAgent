@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace RealEstateAgent
 {
@@ -12,6 +13,7 @@ namespace RealEstateAgent
         private Address address;
         private LegalForm legalForm;
         private int price;
+        private Image estateImage;
 
         //Constructors
         public Estate() { }
@@ -41,15 +43,24 @@ namespace RealEstateAgent
             get { return price; }
             set { price = value; }        
         }
+        public Image EstateImage
+        {
+            get { return estateImage; }
+            set { estateImage = value; }
 
+        }
         // Abstract method to be implemented downwards in subclasses
         public abstract void EstateAbstractMedthod(int var1, int var2);
 
-        public override String ToString() {
+        public override string ToString()
+        {
+           
+           
+            string strOut = String.Format(" {0} {1} {2} {3}",
+               id, LegalForm, price, address.ToString());
 
-            return id.ToString();
-        
-        
+            strOut = strOut.ToUpper();
+            return strOut;
         }
 
     }
