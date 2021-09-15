@@ -116,14 +116,11 @@ namespace RealEstateAgent
                 );
 
             return address;
-
         }
 
         private LegalForm readLegalForm() {
 
-            // Kontrollera så att inte -1?
             return (LegalForm)cmb_legalForm.SelectedValue;
-
         }
 
         private int readPrice() {
@@ -381,8 +378,7 @@ namespace RealEstateAgent
 
                 txt_price.Text = selectedObject.Price.ToString();
 
-                //Dessa två är beroende på vilken typ av objekt som skapats, går ej att komma åt dess specifika properties från estateobjekten. 
-                //txt_dynamic1.Text = selectedObject. 
+                //Dessa två är beroende på vilken typ av objekt som skapats, går ej att komma åt dess specifika properties från estateobjekten.  
                 txt_dynamic1.Text = selectedObject.Attribute1.ToString();
                 txt_dynamic2.Text = selectedObject.Attribute2.ToString();
                 

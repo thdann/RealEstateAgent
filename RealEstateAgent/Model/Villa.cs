@@ -8,7 +8,7 @@ namespace RealEstateAgent
 {
     public class Villa : Residential
     {
-        // Instancevaiables specific to all Villa estates
+       
         private int gardenArea;
 
         //Constructors
@@ -19,23 +19,11 @@ namespace RealEstateAgent
             this.gardenArea = gardenArea;
         }
 
-        //Property - get/set for private instancevariables (encapsulation)
-      /*  public int GardenArea
-        {
-            get { return gardenArea; }
-            set { gardenArea = value; }
-        } */
-
         public override int Attribute2
         {
             get { return gardenArea; }
             set { gardenArea = value; }
         }
 
-        //Abstract method inhereted from base class and implemented here
-     /*   public override void ResidentialAbstractMedthod(int var2)
-        {
-            this.GardenArea = var2;
-        } */
     }
 }

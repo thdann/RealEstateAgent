@@ -16,21 +16,11 @@ namespace RealEstateAgent
             this.numberOfOffices = numberOfOffices; 
         }
 
-        //Property - get/set for private instancevariables (encapsulation)
-   /*     public int NumberOfOffices 
-        {
-            get { return numberOfOffices; }
-            set { numberOfOffices = value; }
-        } */
         public override int Attribute2
         {
             get { return numberOfOffices; }
             set { numberOfOffices = value; }
         }
-        //Abstract method inhereted from base class and implemented here
-    /*    public override void InstitutionallAbstractMedthod(int var2)
-        {
-            this.NumberOfOffices = var2;
-        } */
+
     }
 }

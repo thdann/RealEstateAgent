@@ -47,29 +47,23 @@ namespace RealEstateAgent
         {
             get { return estateImage; }
             set { estateImage = value; }
-
         }
-
         public abstract int Attribute1
         {
             get; set;
         }
-
         public abstract int Attribute2
         {
             get; set;
         }
 
-        // Abstract method to be implemented downwards in subclasses
-    //    public abstract void EstateAbstractMedthod(int var1, int var2);
-
         public override string ToString()
         {
 
-            string strOut = String.Format(" {0}, {1}, {2}, {3}",
+            string strEstate = String.Format(" {0}, {1}, {2}, {3}",
               id, LegalForm, Price, address.ToString());
 
-            return strOut;
+            return strEstate;
         }
 
     }
