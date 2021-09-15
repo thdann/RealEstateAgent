@@ -85,6 +85,7 @@ namespace RealEstateAgent
             int selectedIndex = lst_Estates.SelectedIndex;
             lst_Estates.Items.RemoveAt(selectedIndex);
             estate = null;
+            clearTextFields();
             
         }
 
@@ -178,6 +179,7 @@ namespace RealEstateAgent
 
         private Image readImage()
         {
+            Debug.WriteLine("Metoden readImage(): Denna bild är uppladdad: " + pBox_estateImage.Image);
             return pBox_estateImage.Image;
         }
 
@@ -237,6 +239,9 @@ namespace RealEstateAgent
             comboBox2.SelectedIndex = 0;
             cmb_country.SelectedIndex = 0;
             cmb_legalForm.SelectedIndex = 0;
+
+            pBox_estateImage.Image = null;
+
         }
 
         public void setEstateAttributes() {
@@ -247,6 +252,7 @@ namespace RealEstateAgent
             estate.Price = readPrice();
             estate.EstateAbstractMedthod(readAttribute1(), readAttribute2());
             estate.EstateImage = readImage();
+            Debug.WriteLine("Metoden setEstateAttributed(): Denna bild är inlagt i estateobjektet: " + estate.EstateImage);
 
         }
 
@@ -334,16 +340,25 @@ namespace RealEstateAgent
 
         private void lst_Estates_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+      
             Estate selectedObject = (Estate)lst_Estates.SelectedItem;
             if (selectedObject != null)
             {
+                pBox_estateImage.Image = selectedObject.EstateImage;// funkar ej?
+
                 txt_id.Text = selectedObject.Id.ToString();
                 txt_streetAddress.Text = selectedObject.Address.Street.ToString();
                 txt_zipCode.Text = selectedObject.Address.ZipCode.ToString();
                 txt_city.Text = selectedObject.Address.City.ToString();
                 cmb_country.SelectedItem = selectedObject.Address.Country;
                 cmb_legalForm.SelectedItem = selectedObject.LegalForm;
+
+                txt_price.Text = selectedObject.Price.ToString();
+
+                //Dessa två är beroende på vilken typ av objekt som skapats, går ej att komma åt dess specifika properties från estateobjekten. 
+                //txt_dynamic1.Text = selectedObject. 
+                //txt_dynamic2.Text = selectedObject. 
+
 
                 // Hur fixa comboboxarna utifrån type och basetype när enum i comboboxarna?
                 //comboBox1.SelectedItem =selectedObject.GetType().BaseType; // Estatetype
@@ -373,6 +388,8 @@ namespace RealEstateAgent
             txt_price.Enabled = false;
             txt_dynamic1.Enabled = false;
             txt_dynamic2.Enabled = false;
+
+            btn_save.Enabled = false;
         }
 
         public void enableTextFields()
@@ -389,6 +406,8 @@ namespace RealEstateAgent
             txt_price.Enabled = true;
             txt_dynamic1.Enabled = true;
             txt_dynamic2.Enabled = true;
+            
+            btn_save.Enabled = true;
         }
 
     }
