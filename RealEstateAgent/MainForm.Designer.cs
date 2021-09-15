@@ -446,6 +446,7 @@ namespace RealEstateAgent
             this.lst_Estates.Name = "lst_Estates";
             this.lst_Estates.Size = new System.Drawing.Size(467, 169);
             this.lst_Estates.TabIndex = 2;
+            this.lst_Estates.SelectedIndexChanged += new System.EventHandler(this.lst_Estates_SelectedIndexChanged);
             // 
             // pBox_estateImage
             // 

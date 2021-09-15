@@ -132,7 +132,7 @@ namespace RealEstateAgent
         private int readPrice() {
             int resultat;
 
-            bool success = int.TryParse(txt_id.Text, out resultat);
+            bool success = int.TryParse(txt_price.Text, out resultat);
 
             if (success)
             {
@@ -330,6 +330,22 @@ namespace RealEstateAgent
             openFileDialog1.ShowDialog();
             string filePath = openFileDialog1.FileName;
             pBox_estateImage.Image = Image.FromFile(filePath);
+        }
+
+        private void lst_Estates_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Estate selectedObject = (Estate)lst_Estates.SelectedItem;
+
+            txt_id.Text = selectedObject.Id.ToString();
+            txt_streetAddress.Text = selectedObject.Address.Street.ToString();
+            txt_zipCode.Text = selectedObject.Address.ZipCode.ToString();
+            txt_city.Text = selectedObject.Address.City.ToString();
+            cmb_country.SelectedItem = selectedObject.Address.Country;
+            cmb_legalForm.SelectedItem = selectedObject.LegalForm;
+
+
+            //comboBox1.SelectedItem =selectedObject.GetType().BaseType; // Estatetype, hur får vi fram??
+            //comboBox2.SelectedItem = selectedObject.GetType(); // Detta är om villa/Skola/shop etc. "Buildingtype"
         }
     }
 
