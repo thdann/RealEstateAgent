@@ -179,8 +179,7 @@ namespace RealEstateAgent
             return pBox_estateImage.Image;
         }
 
-
-        private void btn_save_Click(object sender, EventArgs e)
+        private Estate createEstateObject()
         {
             String selectedEstateType = comboBox1.SelectedItem.ToString();
 
@@ -190,18 +189,18 @@ namespace RealEstateAgent
                     estate = new Warehouse();
                     break;
 
-                 case "Shop":
+                case "Shop":
                     estate = new Shop();
                     break;
 
-                 case "Apartment":
+                case "Apartment":
                     estate = new Apartment();
                     break;
 
-                 case "Villa":
+                case "Villa":
                     estate = new Villa();
                     break;
-             
+
                 case "Townhouse":
                     estate = new TownHouse();
                     break;
@@ -216,9 +215,38 @@ namespace RealEstateAgent
 
             }
 
+            setEstateAttributes(); // Sätter attributen på objektet.
+            return estate;
+
+        }
+
+        private Estate editExistingEstateObject() {
+
+            estate = (Estate) lst_Estates.SelectedItem;
             setEstateAttributes();
-            lst_Estates.Items.Add(estate);
-            clearTextFields();
+
+            lst_Estates.Update();
+
+            return estate;
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            if (lst_Estates.SelectedIndex > -1)
+            {
+                editExistingEstateObject();
+                lst_Estates.Items.Clear();
+               
+            }
+            else
+            {
+                createEstateObject(); 
+
+            }
+
+            lst_Estates.Items.Add(estate); 
+            clearTextFields(); 
+
         }
 
         public void clearTextFields() {
@@ -241,15 +269,16 @@ namespace RealEstateAgent
 
         public void setEstateAttributes() {
 
-            estate.Id = readId();
-            estate.Address = readAddress();
-            estate.LegalForm = readLegalForm();
-            estate.Price = readPrice();
-           // estate.EstateAbstractMedthod(readAttribute1(), readAttribute2());
-            estate.Attribute1 = readAttribute1();
-            estate.Attribute2 = readAttribute2();
-            estate.EstateImage = readImage();
-            Debug.WriteLine("Metoden setEstateAttributed(): Denna bild är inlagt i estateobjektet: " + estate.EstateImage);
+            if(estate !=null)
+            {
+                estate.Id = readId();
+                estate.Address = readAddress();
+                estate.LegalForm = readLegalForm();
+                estate.Price = readPrice();
+                estate.Attribute1 = readAttribute1();
+                estate.Attribute2 = readAttribute2();
+                estate.EstateImage = readImage();
+            }
 
         }
 
