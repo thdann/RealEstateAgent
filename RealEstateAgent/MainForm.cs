@@ -221,7 +221,22 @@ namespace RealEstateAgent
 
             setEstateAttributes();
             lst_Estates.Items.Add(estate.ToString());
-           
+            clearTextFields();
+        }
+
+        public void clearTextFields() {
+
+            txt_id.Clear();
+            txt_streetAddress.Clear();
+            txt_zipCode.Clear();
+            txt_city.Clear();
+            txt_price.Clear();
+            txt_dynamic1.Clear();
+            txt_dynamic2.Clear();
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
+            cmb_country.SelectedIndex = 0;
+            cmb_legalForm.SelectedIndex = 0;
         }
 
         public void setEstateAttributes() {
@@ -307,12 +322,6 @@ namespace RealEstateAgent
                     break;
 
             }
-
-        }
-
-        private void btn_uploadImage_Click(object sender, EventArgs e)
-        {
-            
 
         }
 
