@@ -17,6 +17,7 @@ namespace RealEstateAgent
             InitializeGUI();
         }
 
+        // Fill the estate comboboxes with values from the different enums
         public void InitializeGUI() {
             cmb_legalForm.DataSource = Enum.GetValues(typeof(LegalForm));
             cmb_country.DataSource = Enum.GetValues(typeof(Countries));
@@ -59,6 +60,8 @@ namespace RealEstateAgent
 
         }
 
+        //Here we look at witch legalform is selected. If the lealform Rental is choosen 
+        // we set the labeltext to "price per month" and in any other case to "Price"
         private void cmb_legalForm_SelectedIndexChanged(object sender, EventArgs e)
         {
             LegalForm selectedLegalForm = (LegalForm)Enum.Parse(typeof(LegalForm), cmb_legalForm.SelectedValue.ToString());
@@ -72,9 +75,9 @@ namespace RealEstateAgent
                 lbl_price.Text = "Price: ";
             }
 
-
         }
 
+        //When clicking the remove button, we remove the selected estete from the list and set the estete to null
         private void btn_remove_Click(object sender, EventArgs e)
         {
             int selectedIndex = lst_Estates.SelectedIndex;
@@ -89,6 +92,8 @@ namespace RealEstateAgent
 
         }
 
+        //Converting the text in the id textfield to an int.
+        // If it´s ok, success sets to true and result will be returned
         private int readId() {
 
             int resultat;
@@ -105,6 +110,8 @@ namespace RealEstateAgent
 
         }
 
+        /// Get adddress items from the Address textboxes in the gui
+        /// and save the values in an address object that is returned
         private Address readAddress() {
 
             Address address = new(
@@ -117,11 +124,14 @@ namespace RealEstateAgent
             return address;
         }
 
+        //Returns the selected Legalform
         private LegalForm readLegalForm() {
 
             return (LegalForm)cmb_legalForm.SelectedValue;
         }
 
+        //Converting the text in the price textfield to an int.
+        // If it´s ok, success sets to true and result will be returned
         private int readPrice() {
             int resultat;
 
@@ -138,6 +148,8 @@ namespace RealEstateAgent
             }
         }
 
+        //Converting the text in the textfield to an int.
+        // If it´s ok, success sets to true and result will be returned
         private int readAttribute1() {
             int resultat;
 
@@ -153,6 +165,8 @@ namespace RealEstateAgent
             }
         }
 
+        //Converting the text in the id textfield to an int.
+        // If it´s ok, success sets to true and result will be returned
         private int readAttribute2() {
             int resultat;
 
@@ -173,6 +187,8 @@ namespace RealEstateAgent
             return pBox_estateImage.Image;
         }
 
+        //Creates a correct estate according to the type choosen in the combobox
+        // and sets all the attributes to the estate
         private Estate createEstateObject()
         {
             String selectedEstateType = comboBox1.SelectedItem.ToString();
@@ -209,11 +225,13 @@ namespace RealEstateAgent
 
             }
 
-            setEstateAttributes(); // Sätter attributen på objektet.
+            setEstateAttributes(); // Sets all the objects attributes
             return estate;
 
         }
 
+        //To edit an existing estate object. Saves the selected estate in an local estate,
+        // sets the estates attributes and updates the list in the gui, then return the estate
         private Estate editExistingEstateObject() {
 
             estate = (Estate) lst_Estates.SelectedItem;
@@ -224,6 +242,8 @@ namespace RealEstateAgent
             return estate;
         }
 
+        //If the index in the list is greater then -1, the user has choosen an estate 
+        // and it should be edited. If it is -1 a new estate object should be created
         private void btn_save_Click(object sender, EventArgs e)
         {
             if (lst_Estates.SelectedIndex > -1)
@@ -243,6 +263,8 @@ namespace RealEstateAgent
 
         }
 
+
+        //cleares all the textfields
         public void clearTextFields() {
 
             txt_id.Clear();
@@ -261,6 +283,7 @@ namespace RealEstateAgent
 
         }
 
+        //Sets all the attributes to an estate, if the estate is not null
         public void setEstateAttributes() {
 
             if(estate !=null)
@@ -287,6 +310,7 @@ namespace RealEstateAgent
         }
 
         //Combobox for EstateType (Commercial/Resedential/Institutional
+        //Depending on witch estate type is chooses it sets the label to different text
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {        
             EstateType selectedEstateType = (EstateType)Enum.Parse(typeof(EstateType), comboBox2.SelectedValue.ToString());         
@@ -313,10 +337,11 @@ namespace RealEstateAgent
         }
 
         //Combobox for buildingtype - base classes (Villa, Shop, School etc.)
+        //Depending on witch building type is chooses it sets the label to different text
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             String selectedEstateType = comboBox1.SelectedItem.ToString();
-            //Estate selectedEstateType = (Estate) comboBox1.SelectedItem;
+            
 
             switch (selectedEstateType)
             {
@@ -351,6 +376,7 @@ namespace RealEstateAgent
 
         }
 
+        //Upload photo button
         private void btn_upploadImages_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
@@ -394,15 +420,13 @@ namespace RealEstateAgent
             txt_dynamic1.Text = selectedObject.Attribute1.ToString();
             txt_dynamic2.Text = selectedObject.Attribute2.ToString();
 
-       
-
         }
 
+        //Sets the estate object to comboboxes.
         public void setEstateObjectToComboBoxes(ref Estate selectedObject) {
 
             comboBox2.SelectedItem = getEstateType(selectedObject);
             comboBox1.SelectedItem = getBuildingType(selectedObject);
-
 
         }
 

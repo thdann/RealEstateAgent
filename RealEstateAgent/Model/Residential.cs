@@ -8,7 +8,7 @@ namespace RealEstateAgent
 {
     public abstract class Residential : Estate
     {
-    
+        // Instancevaiables specific to all Residential estates
         private int numberOfRooms;
 
         //Constructors
@@ -19,6 +19,7 @@ namespace RealEstateAgent
             this.numberOfRooms = numberOfRooms;
         }
 
+        //Here we override the Attribute1 to set specific attribute for all Residential estetes
         public override int Attribute1
         {
             get { return numberOfRooms; }

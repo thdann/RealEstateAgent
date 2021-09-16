@@ -16,8 +16,8 @@ namespace RealEstateAgent
         {
             this.squareMeter = squareMeters;        
         }
-     
 
+        //Here we override the Attribute1 to set specific attribute for all Commercial estetes
         public override int Attribute1
         {
             get { return squareMeter; }

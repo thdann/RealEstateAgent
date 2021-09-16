@@ -5,6 +5,7 @@ using System.Text;
 
 namespace RealEstateAgent
 {
+    // A model class that represent the address
     public class Address
     {
         //Instancevariables specific to all Address objects
@@ -43,6 +44,7 @@ namespace RealEstateAgent
             set { country = value; }
         }
 
+        //String formatted to one line
         public override string ToString()
         {
             string strAddress = string.Format("{0}, {1}, {2}, {3}", street, zipCode, city, country);

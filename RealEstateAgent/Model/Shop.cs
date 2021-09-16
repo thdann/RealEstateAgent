@@ -20,6 +20,7 @@ namespace RealEstateAgent
             this.numberOfElectricalSockets = numberOfElectricalSockets;        
         }
 
+        //Here we override the Attribute2 to set specific attribute for all sShop estetes
         public override int Attribute2 {
             get { return numberOfElectricalSockets; }
             set { numberOfElectricalSockets = value; }

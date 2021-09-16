@@ -15,7 +15,7 @@ namespace RealEstateAgent
         { 
             this.numberOfOffices = numberOfOffices; 
         }
-
+        //Here we override the Attribute2 to set specific attribute for all university estetes
         public override int Attribute2
         {
             get { return numberOfOffices; }
