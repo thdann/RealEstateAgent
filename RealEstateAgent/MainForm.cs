@@ -24,7 +24,6 @@ namespace RealEstateAgent
 
         }
 
-
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -154,7 +153,6 @@ namespace RealEstateAgent
             }
         }
 
-
         private int readAttribute2() {
             int resultat;
 
@@ -172,7 +170,6 @@ namespace RealEstateAgent
 
         private Image readImage()
         {
-            Debug.WriteLine("Metoden readImage(): Denna bild är uppladdad: " + pBox_estateImage.Image);
             return pBox_estateImage.Image;
         }
 
@@ -319,6 +316,7 @@ namespace RealEstateAgent
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             String selectedEstateType = comboBox1.SelectedItem.ToString();
+            //Estate selectedEstateType = (Estate) comboBox1.SelectedItem;
 
             switch (selectedEstateType)
             {
@@ -341,7 +339,7 @@ namespace RealEstateAgent
                 case "Townhouse":
                     lbl_dynamic2.Text = "Number of floors:";
                     break;
-               
+
                 case "University":
                     lbl_dynamic2.Text = "Number of Offices:";
                     break;
@@ -349,7 +347,6 @@ namespace RealEstateAgent
                 case "School":
                     lbl_dynamic2.Text = "Number of classrooms:";
                     break;
-
             }
 
         }
@@ -367,26 +364,8 @@ namespace RealEstateAgent
             Estate selectedObject = (Estate)lst_Estates.SelectedItem;
             if (selectedObject != null)
             {
-                pBox_estateImage.Image = selectedObject.EstateImage;// funkar ej?
-
-                txt_id.Text = selectedObject.Id.ToString();
-                txt_streetAddress.Text = selectedObject.Address.Street.ToString();
-                txt_zipCode.Text = selectedObject.Address.ZipCode.ToString();
-                txt_city.Text = selectedObject.Address.City.ToString();
-                cmb_country.SelectedItem = selectedObject.Address.Country;
-                cmb_legalForm.SelectedItem = selectedObject.LegalForm;
-
-                txt_price.Text = selectedObject.Price.ToString();
-
-                //Dessa två är beroende på vilken typ av objekt som skapats, går ej att komma åt dess specifika properties från estateobjekten.  
-                txt_dynamic1.Text = selectedObject.Attribute1.ToString();
-                txt_dynamic2.Text = selectedObject.Attribute2.ToString();
-                
-
-                // Hur fixa comboboxarna utifrån type och basetype när enum i comboboxarna?
-                //comboBox1.SelectedItem =selectedObject.GetType().BaseType; // Estatetype
-                //comboBox2.SelectedItem = selectedObject.GetType(); // Detta är om villa/Skola/shop etc. "Buildingtype"
-
+                setEstateObjectToComboBoxes(ref selectedObject);
+                setEstateObjectToTextfields(ref selectedObject);
                 disableTextFields();
 
             }
@@ -396,6 +375,79 @@ namespace RealEstateAgent
 
                    }
 
+        }
+
+        public void setEstateObjectToTextfields(ref Estate selectedObject) {
+
+            pBox_estateImage.Image = selectedObject.EstateImage;
+
+            txt_id.Text = selectedObject.Id.ToString();
+            txt_streetAddress.Text = selectedObject.Address.Street.ToString();
+            txt_zipCode.Text = selectedObject.Address.ZipCode.ToString();
+            txt_city.Text = selectedObject.Address.City.ToString();
+            cmb_country.SelectedItem = selectedObject.Address.Country;
+            cmb_legalForm.SelectedItem = selectedObject.LegalForm;
+
+            txt_price.Text = selectedObject.Price.ToString();
+
+            //Dessa två är beroende på vilken typ av objekt som skapats, går ej att komma åt dess specifika properties från estateobjekten.  
+            txt_dynamic1.Text = selectedObject.Attribute1.ToString();
+            txt_dynamic2.Text = selectedObject.Attribute2.ToString();
+
+       
+
+        }
+
+        public void setEstateObjectToComboBoxes(ref Estate selectedObject) {
+
+            comboBox2.SelectedItem = getEstateType(selectedObject);
+            comboBox1.SelectedItem = getBuildingType(selectedObject);
+
+
+        }
+
+        public EstateType getEstateType(Estate typeOfEstate) {
+
+            switch (typeOfEstate)
+            {
+                case Commercial:
+                    return EstateType.Commercial;
+
+                case Residential:
+                    return EstateType.Residential;
+
+                case Institutional:
+                    return EstateType.Institutional;
+                default:
+                    return EstateType.Commercial;
+                   
+             
+            }
+        }
+
+        public Enum getBuildingType(Estate typeOfBuilding) {
+
+            switch (typeOfBuilding) {
+
+                case Warehouse:
+                    return CommercialType.Warehouse;
+                case Shop:
+                    return CommercialType.Shop;
+                case Apartment:
+                    return ResidentialType.Apartment;
+                case Villa:
+                    return ResidentialType.Villa;
+                case TownHouse:
+                    return ResidentialType.Townhouse;
+                case School:
+                    return InstitutionalType.School;
+                case University:
+                    return InstitutionalType.University;
+                default:
+                    return CommercialType.Warehouse;
+            
+            }
+        
         }
 
         public void disableTextFields() {
