@@ -20,8 +20,7 @@ namespace RealEstateAgent
             this.numberOfShelves = numberofShelves;        
         }
 
-        //Here we override the Attribute2 to set specific attribute for all Warehouse estetes
-        public override int Attribute2
+        public int NumberOfShelves
         {
             get { return numberOfShelves; }
             set { numberOfShelves = value; }

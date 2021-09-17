@@ -19,8 +19,8 @@ namespace RealEstateAgent
             this.numberOfRooms = numberOfRooms;
         }
 
-        //Here we override the Attribute1 to set specific attribute for all Residential estetes
-        public override int Attribute1
+        
+        public int NumberOfRooms
         {
             get { return numberOfRooms; }
             set { numberOfRooms = value; }

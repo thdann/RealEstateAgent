@@ -18,8 +18,7 @@ namespace RealEstateAgent
             this.numberOfClassrooms = numberOfClassrooms;
         
         }
-        //Here we override the Attribute2 to set specific attribute for all school estetes
-        public override int Attribute2 
+        public int NumberOfClassrooms
         { 
             get { return numberOfClassrooms; }
             set { numberOfClassrooms = value; }

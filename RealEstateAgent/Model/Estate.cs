@@ -7,6 +7,7 @@ using System.Drawing;
 
 namespace RealEstateAgent
 {
+    //TODO, här behöver vi en abstrakt metod som implemteras antingen 1 el 2 steg ner i hierarkin, enligt kravspec!
     public abstract class Estate : IEstate
     {
         // Instancevaiables specific to all estates
@@ -48,18 +49,6 @@ namespace RealEstateAgent
         {
             get { return estateImage; }
             set { estateImage = value; }
-        }
-
-        //An abstract property to set and get the specific attribute for each estatetype
-        public abstract int Attribute1
-        {
-            get; set;
-        }
-
-        //An abstract property to set and get the specific attribute for each buildingtype
-        public abstract int Attribute2
-        {
-            get; set;
         }
 
 

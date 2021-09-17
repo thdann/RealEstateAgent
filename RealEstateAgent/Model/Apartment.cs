@@ -19,8 +19,8 @@ namespace RealEstateAgent
             this.floor = floor;        
         }
 
-        //Here we override the Attribute2 to set specific attribute for all Apartment estetes
-        public override int Attribute2 {
+        public int Floor 
+        {
             get { return floor; }
             set { floor = value; }
         }

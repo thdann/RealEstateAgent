@@ -20,8 +20,7 @@ namespace RealEstateAgent
         
         }
 
-        //Here we override the Attribute2 to set specific attribute for all TownHouse estetes
-        public override int Attribute2
+        public int NumberOfFloors
         {
             get { return numberOfFloors; }
             set { numberOfFloors = value; }

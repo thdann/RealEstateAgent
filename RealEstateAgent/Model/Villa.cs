@@ -19,8 +19,7 @@ namespace RealEstateAgent
             this.gardenArea = gardenArea;
         }
 
-        //Here we override the Attribute2 to set specific attribute for all Villa estetes
-        public override int Attribute2
+        public int GardenArea
         {
             get { return gardenArea; }
             set { gardenArea = value; }
