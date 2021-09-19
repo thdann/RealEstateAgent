@@ -10,12 +10,14 @@ namespace RealEstateAgent
 
         //Constructors
         public University() { }
+
         public University(int id, Address address, LegalForm legalForm, int price, int numberOfPeopleAllowed, int numberOfOffices) 
             : base(id, address, legalForm, price, numberOfPeopleAllowed) 
         { 
             this.numberOfOffices = numberOfOffices; 
         }
-        
+
+        //Properties - get/set for private instancevariables (encapsulation)
         public int NumberOfOffices
         {
             get { return numberOfOffices; }

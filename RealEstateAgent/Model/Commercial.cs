@@ -17,7 +17,7 @@ namespace RealEstateAgent
             this.squareMeter = squareMeters;        
         }
 
-        
+        //Properties - get/set for private instancevariables (encapsulation)
         public int SquareMeter
         {
             get { return squareMeter; }

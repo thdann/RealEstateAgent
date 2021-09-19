@@ -20,6 +20,7 @@ namespace RealEstateAgent
             this.numberOfElectricalSockets = numberOfElectricalSockets;        
         }
 
+        //Properties - get/set for private instancevariables (encapsulation)
         public int NumberOfElectricalSockets 
         {
             get { return numberOfElectricalSockets; }

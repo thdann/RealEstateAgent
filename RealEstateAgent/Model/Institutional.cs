@@ -18,7 +18,7 @@ namespace RealEstateAgent
         
         }
 
-   
+        //Properties - get/set for private instancevariables (encapsulation)
         public int NumberOfPeopleAllowed
         {
             get { return numberOfPeopleAllowed; }

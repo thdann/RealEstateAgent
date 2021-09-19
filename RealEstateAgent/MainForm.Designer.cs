@@ -306,7 +306,6 @@ namespace RealEstateAgent
             this.lbl_estateType.Size = new System.Drawing.Size(230, 20);
             this.lbl_estateType.TabIndex = 0;
             this.lbl_estateType.Text = "Estate type:";
-            this.lbl_estateType.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // lbl_buildingType
             // 

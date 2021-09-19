@@ -20,6 +20,7 @@ namespace RealEstateAgent
             this.numberOfShelves = numberofShelves;        
         }
 
+        //Properties - get/set for private instancevariables (encapsulation)
         public int NumberOfShelves
         {
             get { return numberOfShelves; }

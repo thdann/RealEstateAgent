@@ -9,15 +9,16 @@ namespace RealEstateAgent
         private int numberOfClassrooms;
 
         //Constructors
-        public School(){
-            
-        }
+        public School() {}
+
         public School(int id, Address address, LegalForm legalForm, int price, int numberOfPeopleAllowed, int numberOfClassrooms) 
             : base (id,address, legalForm, price, numberOfPeopleAllowed) 
         {
             this.numberOfClassrooms = numberOfClassrooms;
         
         }
+
+        //Properties - get/set for private instancevariables (encapsulation)
         public int NumberOfClassrooms
         { 
             get { return numberOfClassrooms; }

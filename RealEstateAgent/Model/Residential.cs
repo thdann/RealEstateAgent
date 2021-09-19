@@ -13,13 +13,14 @@ namespace RealEstateAgent
 
         //Constructors
         public Residential() { }
+
         public Residential(int id, Address address, LegalForm legalForm, int price, int numberOfRooms) 
             : base (id, address, legalForm, price) 
         {
             this.numberOfRooms = numberOfRooms;
         }
 
-        
+        //Properties - get/set for private instancevariables (encapsulation)
         public int NumberOfRooms
         {
             get { return numberOfRooms; }
