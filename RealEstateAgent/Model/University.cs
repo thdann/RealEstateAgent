@@ -24,5 +24,10 @@ namespace RealEstateAgent
             set { numberOfOffices = value; }
         }
 
+        public override string ToString()
+        {
+            return base.ToString() + NumberOfOffices;
+        }
+
     }
 }

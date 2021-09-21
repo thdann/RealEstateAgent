@@ -27,5 +27,9 @@ namespace RealEstateAgent
             set { numberOfElectricalSockets = value; }
         }
 
+        public override string ToString()
+        {
+            return base.ToString() + numberOfElectricalSockets;
+        }
     }
 }

@@ -27,5 +27,10 @@ namespace RealEstateAgent
             set { numberOfShelves = value; }
         }
 
+        public override string ToString()
+        {
+            return base.ToString() + NumberOfShelves; //Stor eller liten bokstav?
+        }
+
     }
 }

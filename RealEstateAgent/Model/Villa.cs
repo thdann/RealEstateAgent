@@ -27,5 +27,10 @@ namespace RealEstateAgent
             set { gardenArea = value; }
         }
 
+        public override string ToString()
+        {
+            return base.ToString() + GardenArea; //Stor eller liten bokstav?
+        }
+
     }
 }

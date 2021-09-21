@@ -27,5 +27,10 @@ namespace RealEstateAgent
             set { numberOfFloors = value; }
         }
 
+        public override string ToString()
+        {
+            return base.ToString() + NumberOfFloors; //Stor eller liten bokstav?
+        }
+
     }
 }

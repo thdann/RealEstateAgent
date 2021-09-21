@@ -27,6 +27,11 @@ namespace RealEstateAgent
             set { floor = value; }
         }
 
+        public override string ToString()
+        {
+            return base.ToString() + Floor;
+        }
+
     }
 
  }

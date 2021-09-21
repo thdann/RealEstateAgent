@@ -24,5 +24,10 @@ namespace RealEstateAgent
             set { squareMeter = value; }
         }
 
+        public override string ToString()
+        {
+            return base.ToString() + SquareMeter;
+        }
+
     }
 }

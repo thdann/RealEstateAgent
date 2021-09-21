@@ -24,6 +24,11 @@ namespace RealEstateAgent
             get { return numberOfPeopleAllowed; }
             set { numberOfPeopleAllowed = value; }
         }
- 
+
+        public override string ToString()
+        {
+            return base.ToString() + NumberOfPeopleAllowed;
+        }
+
     }
 }

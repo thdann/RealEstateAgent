@@ -8,11 +8,14 @@ namespace RealEstateAgent
     public partial class MainForm : Form
     {
         private Estate estate;
+        private EstateManager estateManager;
 
         public MainForm()
         {
+            estateManager = new EstateManager();
             InitializeComponent();
             InitializeComboBoxes(); //Our created method
+            InitializeList();
         }
 
         // Fill the estate comboboxes with values from the different enums
@@ -21,6 +24,12 @@ namespace RealEstateAgent
             cmb_country.DataSource = Enum.GetValues(typeof(Countries));
             comboBox2.DataSource = Enum.GetValues(typeof(EstateType));
 
+        }
+
+        //Fills the list with saved objects
+        public void InitializeList()
+        {
+          //  lst_Estates.Items.AddRange(estateManager.ToStringList());// = estateManager.ToStringList();
         }
 
         //Combobox for EstateType (Commercial/Resedential/Institutional
@@ -240,32 +249,26 @@ namespace RealEstateAgent
         // and it should be edited. If it is -1 a new estate object should be created
         private void btn_save_Click(object sender, EventArgs e)
         {
-            if (lst_Estates.SelectedIndex > -1)
-            {
-                editExistingEstateObject();
+            Debug.WriteLine("Du har klickat på save");
+                 createObject();
+                 checkEstateTypeAndSetAttributes(estate);
+                 setTypeSpecificAttributes(estate);
+                 setEstateAttributes();
+                 estateManager.AddEstate(estate);
                 lst_Estates.Items.Clear();
+           // lst_Estates.Items.AddRange(estateManager.ToStringList());
 
-            }
-            else
-            {
-                createObject();
-                checkEstateTypeAndSetAttributes(estate);
-                setTypeSpecificAttributes(estate);
-                setEstateAttributes();
 
-            }
-
-            lst_Estates.Items.Add(estate);
-            clearTextFields();
 
         }
 
         //When clicking the remove button, we remove the selected estete from the list and set the estete to null
         private void btn_remove_Click(object sender, EventArgs e)
         {
-            int selectedIndex = lst_Estates.SelectedIndex;
-            lst_Estates.Items.RemoveAt(selectedIndex);
-            estate = null;
+           
+            
+            
+           
             clearTextFields();
 
         }
@@ -404,51 +407,23 @@ namespace RealEstateAgent
         private void editExistingEstateObject()
         {
 
-            estate = (Estate)lst_Estates.SelectedItem;
+          /*  estate = (Estate)lst_Estates.SelectedItem;
 
             checkEstateTypeAndSetAttributes(estate);
             setTypeSpecificAttributes(estate);
             setEstateAttributes();
 
-            lst_Estates.Update();
+            lst_Estates.Update(); */
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 
         private void lst_Estates_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Debug.WriteLine(lst_Estates.SelectedIndex);
       
-            Estate selectedObject = (Estate)lst_Estates.SelectedItem;
+          /*  Estate selectedObject = (Estate)lst_Estates.SelectedItem;
             if (selectedObject != null)
             {
                 setEstateObjectToComboBoxes(ref selectedObject);
@@ -460,7 +435,7 @@ namespace RealEstateAgent
 
                 enableTextFields();
 
-                   }
+                   } */
 
         }
 
