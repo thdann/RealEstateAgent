@@ -63,11 +63,20 @@ namespace RealEstateAgent
             this.lst_Estates = new System.Windows.Forms.ListBox();
             this.pBox_estateImage = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileXML = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnl_southwest.SuspendLayout();
             this.pnl_northwest.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_estateImage)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -272,16 +281,17 @@ namespace RealEstateAgent
             this.pnl_northwest.ColumnCount = 2;
             this.pnl_northwest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.pnl_northwest.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.pnl_northwest.Controls.Add(this.lbl_estateType, 0, 0);
-            this.pnl_northwest.Controls.Add(this.lbl_buildingType, 0, 1);
-            this.pnl_northwest.Controls.Add(this.lbl_legalForm, 0, 2);
-            this.pnl_northwest.Controls.Add(this.cmb_legalForm, 1, 2);
-            this.pnl_northwest.Controls.Add(this.comboBox1, 1, 1);
-            this.pnl_northwest.Controls.Add(this.comboBox2, 1, 0);
-            this.pnl_northwest.Controls.Add(this.Ibl_id, 0, 3);
+            this.pnl_northwest.Controls.Add(this.lbl_estateType, 0, 1);
+            this.pnl_northwest.Controls.Add(this.lbl_buildingType, 0, 2);
+            this.pnl_northwest.Controls.Add(this.lbl_legalForm, 0, 3);
+            this.pnl_northwest.Controls.Add(this.cmb_legalForm, 1, 3);
+            this.pnl_northwest.Controls.Add(this.comboBox1, 1, 2);
+            this.pnl_northwest.Controls.Add(this.comboBox2, 1, 1);
+            this.pnl_northwest.Controls.Add(this.Ibl_id, 0, 4);
             this.pnl_northwest.Controls.Add(this.lbl_uploadImages, 0, 5);
             this.pnl_northwest.Controls.Add(this.btn_upploadImages, 1, 5);
-            this.pnl_northwest.Controls.Add(this.txt_id, 1, 3);
+            this.pnl_northwest.Controls.Add(this.txt_id, 1, 4);
+            this.pnl_northwest.Controls.Add(this.menuStrip1, 0, 0);
             this.pnl_northwest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_northwest.Location = new System.Drawing.Point(3, 3);
             this.pnl_northwest.Name = "pnl_northwest";
@@ -301,7 +311,7 @@ namespace RealEstateAgent
             // 
             this.lbl_estateType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_estateType.AutoSize = true;
-            this.lbl_estateType.Location = new System.Drawing.Point(3, 7);
+            this.lbl_estateType.Location = new System.Drawing.Point(3, 35);
             this.lbl_estateType.Name = "lbl_estateType";
             this.lbl_estateType.Size = new System.Drawing.Size(230, 20);
             this.lbl_estateType.TabIndex = 0;
@@ -311,7 +321,7 @@ namespace RealEstateAgent
             // 
             this.lbl_buildingType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_buildingType.AutoSize = true;
-            this.lbl_buildingType.Location = new System.Drawing.Point(3, 41);
+            this.lbl_buildingType.Location = new System.Drawing.Point(3, 69);
             this.lbl_buildingType.Name = "lbl_buildingType";
             this.lbl_buildingType.Size = new System.Drawing.Size(230, 20);
             this.lbl_buildingType.TabIndex = 1;
@@ -321,7 +331,7 @@ namespace RealEstateAgent
             // 
             this.lbl_legalForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_legalForm.AutoSize = true;
-            this.lbl_legalForm.Location = new System.Drawing.Point(3, 75);
+            this.lbl_legalForm.Location = new System.Drawing.Point(3, 103);
             this.lbl_legalForm.Name = "lbl_legalForm";
             this.lbl_legalForm.Size = new System.Drawing.Size(230, 20);
             this.lbl_legalForm.TabIndex = 2;
@@ -331,7 +341,7 @@ namespace RealEstateAgent
             // 
             this.cmb_legalForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmb_legalForm.FormattingEnabled = true;
-            this.cmb_legalForm.Location = new System.Drawing.Point(239, 71);
+            this.cmb_legalForm.Location = new System.Drawing.Point(239, 99);
             this.cmb_legalForm.Name = "cmb_legalForm";
             this.cmb_legalForm.Size = new System.Drawing.Size(231, 28);
             this.cmb_legalForm.TabIndex = 3;
@@ -341,7 +351,7 @@ namespace RealEstateAgent
             // 
             this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(239, 37);
+            this.comboBox1.Location = new System.Drawing.Point(239, 65);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(231, 28);
             this.comboBox1.TabIndex = 4;
@@ -351,7 +361,7 @@ namespace RealEstateAgent
             // 
             this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(239, 3);
+            this.comboBox2.Location = new System.Drawing.Point(239, 31);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(231, 28);
             this.comboBox2.TabIndex = 5;
@@ -361,7 +371,7 @@ namespace RealEstateAgent
             // 
             this.Ibl_id.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Ibl_id.AutoSize = true;
-            this.Ibl_id.Location = new System.Drawing.Point(3, 108);
+            this.Ibl_id.Location = new System.Drawing.Point(3, 136);
             this.Ibl_id.Name = "Ibl_id";
             this.Ibl_id.Size = new System.Drawing.Size(230, 20);
             this.Ibl_id.TabIndex = 6;
@@ -371,7 +381,7 @@ namespace RealEstateAgent
             // 
             this.lbl_uploadImages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_uploadImages.AutoSize = true;
-            this.lbl_uploadImages.Location = new System.Drawing.Point(3, 142);
+            this.lbl_uploadImages.Location = new System.Drawing.Point(3, 170);
             this.lbl_uploadImages.Name = "lbl_uploadImages";
             this.lbl_uploadImages.Size = new System.Drawing.Size(230, 20);
             this.lbl_uploadImages.TabIndex = 8;
@@ -380,7 +390,7 @@ namespace RealEstateAgent
             // btn_upploadImages
             // 
             this.btn_upploadImages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_upploadImages.Location = new System.Drawing.Point(239, 138);
+            this.btn_upploadImages.Location = new System.Drawing.Point(239, 166);
             this.btn_upploadImages.Name = "btn_upploadImages";
             this.btn_upploadImages.Size = new System.Drawing.Size(231, 29);
             this.btn_upploadImages.TabIndex = 9;
@@ -391,7 +401,7 @@ namespace RealEstateAgent
             // txt_id
             // 
             this.txt_id.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_id.Location = new System.Drawing.Point(239, 105);
+            this.txt_id.Location = new System.Drawing.Point(239, 133);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(231, 27);
             this.txt_id.TabIndex = 10;
@@ -461,12 +471,76 @@ namespace RealEstateAgent
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_northwest.SetColumnSpan(this.menuStrip1, 2);
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFile});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(473, 28);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // mnuFile
+            // 
+            this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFileNew,
+            this.mnuFileOpen,
+            this.mnuFileSave,
+            this.mnuFileSaveAs,
+            this.mnuFileXML,
+            this.mnuFileExit});
+            this.mnuFile.Name = "mnuFile";
+            this.mnuFile.Size = new System.Drawing.Size(46, 24);
+            this.mnuFile.Text = "File";
+            // 
+            // mnuFileNew
+            // 
+            this.mnuFileNew.Name = "mnuFileNew";
+            this.mnuFileNew.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileNew.Text = "New";
+            // 
+            // mnuFileOpen
+            // 
+            this.mnuFileOpen.Name = "mnuFileOpen";
+            this.mnuFileOpen.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileOpen.Text = "Open";
+            // 
+            // mnuFileSave
+            // 
+            this.mnuFileSave.Name = "mnuFileSave";
+            this.mnuFileSave.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileSave.Text = "Save";
+            // 
+            // mnuFileSaveAs
+            // 
+            this.mnuFileSaveAs.Name = "mnuFileSaveAs";
+            this.mnuFileSaveAs.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileSaveAs.Text = "Save As";
+            // 
+            // mnuFileXML
+            // 
+            this.mnuFileXML.Name = "mnuFileXML";
+            this.mnuFileXML.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileXML.Text = "XML";
+            // 
+            // mnuFileExit
+            // 
+            this.mnuFileExit.Name = "mnuFileExit";
+            this.mnuFileExit.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileExit.Text = "Exit";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(958, 552);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -477,6 +551,8 @@ namespace RealEstateAgent
             this.pnl_northwest.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pBox_estateImage)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -517,6 +593,14 @@ namespace RealEstateAgent
         private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.ListBox lst_Estates;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mnuFile;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileNew;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileOpen;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileSave;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileSaveAs;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileXML;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileExit;
     }
 }
 
