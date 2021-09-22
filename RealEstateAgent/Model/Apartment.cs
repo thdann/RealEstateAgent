@@ -29,7 +29,7 @@ namespace RealEstateAgent
 
         public override string ToString()
         {
-            return base.ToString() + Floor;
+            return base.ToString() + $"{floor}";
         }
 
     }

@@ -56,7 +56,7 @@ namespace RealEstateAgent
         public override string ToString()
         {
 
-            string strEstate = String.Format(" {0}, {1}, {2}, {3}",
+            string strEstate = String.Format(" {0}, {1}, {2}, {3}, ",
               id, LegalForm, Price, address.ToString());
 
             return strEstate;

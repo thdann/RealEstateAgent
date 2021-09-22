@@ -29,7 +29,7 @@ namespace RealEstateAgent
 
         public override string ToString()
         {
-            return base.ToString() + numberOfElectricalSockets;
+            return base.ToString() + $"{numberOfElectricalSockets}";
         }
     }
 }

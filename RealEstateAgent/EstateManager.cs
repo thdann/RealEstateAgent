@@ -19,11 +19,6 @@ namespace RealEstateAgent
             Add(estate); //Fråga om det är ok att göra så här, utan base så blit det stackOverflow
         }
 
-        public void Remove(int index)
-        {
-            DeleteAt(index);
-        }
-
 
         public void TestEstates()
         {

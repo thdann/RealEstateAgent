@@ -26,7 +26,7 @@ namespace RealEstateAgent
 
         public override string ToString()
         {
-            return base.ToString() + NumberOfOffices;
+            return base.ToString() + $"{numberOfOffices}";
         }
 
     }

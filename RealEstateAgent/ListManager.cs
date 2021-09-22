@@ -41,7 +41,6 @@ namespace RealEstateAgent
             {
                 Debug.WriteLine("Innan radering: " + list[anIndex]);
                 list.RemoveAt(anIndex);
-                Debug.WriteLine("Efter radering: " + list[anIndex]);
                 ok = true;
             }
             return ok;

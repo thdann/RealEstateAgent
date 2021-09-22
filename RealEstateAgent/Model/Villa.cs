@@ -29,7 +29,7 @@ namespace RealEstateAgent
 
         public override string ToString()
         {
-            return base.ToString() + GardenArea; //Stor eller liten bokstav?
+            return base.ToString() + $"{gardenArea}";
         }
 
     }
