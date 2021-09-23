@@ -607,7 +607,30 @@ namespace RealEstateAgent
             }
         }
 
+        private void mnuFileOpen_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.InitialDirectory = Application.StartupPath;
 
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                fileName = openFileDialog1.FileName;
+                if (estateManager.BinaryDeSerialize(fileName))
+                {
+                    UpdateResultInList();
+                }
+                else
+                {
+                    Debug.WriteLine("Du är i else delen på open file");
+                }
+            }
+        }
+
+        private void mnuFileNew_Click(object sender, EventArgs e)
+        {
+            //jämför om användare har klickat spara innan
+            estateManager = new EstateManager();
+            UpdateResultInList();
+        }
 
 
 
@@ -660,6 +683,7 @@ namespace RealEstateAgent
 
         }
 
+        
     }
 
 

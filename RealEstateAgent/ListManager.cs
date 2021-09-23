@@ -126,7 +126,27 @@ namespace RealEstateAgent
 
         public bool BinaryDeSerialize(string fileName)
         {
-            throw new NotImplementedException();
+            bool ok = false;
+            FileStream file = null;
+
+            try
+            {
+                file = new FileStream(fileName, FileMode.Open);
+                IFormatter formatter = new BinaryFormatter();
+                list = new List<T>();
+                list = formatter.Deserialize(file) as List<T>;
+                ok = true;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+            finally
+            {
+                file.Close();
+            }
+
+            return ok;
         }
 
         public bool BinarySerialize(string fileName)

@@ -439,12 +439,14 @@ namespace RealEstateAgent
             this.mnuFileNew.Name = "mnuFileNew";
             this.mnuFileNew.Size = new System.Drawing.Size(224, 26);
             this.mnuFileNew.Text = "New";
+            this.mnuFileNew.Click += new System.EventHandler(this.mnuFileNew_Click);
             // 
             // mnuFileOpen
             // 
             this.mnuFileOpen.Name = "mnuFileOpen";
             this.mnuFileOpen.Size = new System.Drawing.Size(224, 26);
             this.mnuFileOpen.Text = "Open";
+            this.mnuFileOpen.Click += new System.EventHandler(this.mnuFileOpen_Click);
             // 
             // mnuFileSave
             // 
