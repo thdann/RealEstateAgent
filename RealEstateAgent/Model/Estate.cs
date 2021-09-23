@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace RealEstateAgent
 {
-    //TODO, här behöver vi en abstrakt metod som implemteras antingen 1 el 2 steg ner i hierarkin, enligt kravspec!
+    [Serializable]
     public abstract class Estate : IEstate
     {
         // Instancevaiables specific to all estates

@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 
 namespace RealEstateAgent
 {
     public class EstateManager : ListManager<Estate>
     {
-
+        
         public EstateManager()
         {
             TestEstates();
@@ -26,6 +29,8 @@ namespace RealEstateAgent
             base.Add(new Shop(2, new Address("ekväg4", "12222", "Lund", Countries.Algeria), LegalForm.Ownership, 100033, 3, 4));
             base.Add(new Villa(3, new Address("plommonväg1", "11111", "Oskarshamn", Countries.Algeria), LegalForm.Ownership, 1400008, 200, 700));
         }
+
+
        
 
     }

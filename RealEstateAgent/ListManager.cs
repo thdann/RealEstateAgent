@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 
 namespace RealEstateAgent
 {
+    [Serializable]
     public class ListManager<T> : IListManager<T>
     {
         private List<T> list;
@@ -127,7 +131,28 @@ namespace RealEstateAgent
 
         public bool BinarySerialize(string fileName)
         {
-            throw new NotImplementedException();
+            bool ok = false;
+            FileStream file = null;
+
+            try
+            {
+                file = new FileStream(fileName, FileMode.Create);
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(file, list);
+                ok = true;
+                Debug.WriteLine(" Serialize gick ok ");
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+            finally
+            {
+                file.Close();
+                Debug.WriteLine(" Nu är filen stängd ");
+            }
+
+            return ok;
         }
 
         public void DeleteAll()

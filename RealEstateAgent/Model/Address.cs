@@ -6,6 +6,7 @@ using System.Text;
 namespace RealEstateAgent
 {
     // A model class that represent the address
+    [Serializable]
     public class Address
     {
         //Instancevariables specific to all Address objects

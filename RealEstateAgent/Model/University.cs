@@ -3,6 +3,7 @@ using System.Windows.Forms;
 
 namespace RealEstateAgent
 {
+    [Serializable]
     public class University : Institutional
     {
         //Instancevaiables specific to all University estates

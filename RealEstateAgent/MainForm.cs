@@ -9,6 +9,7 @@ namespace RealEstateAgent
     {
         //private Estate estate;
         private EstateManager estateManager;
+        private string fileName;
 
         public MainForm()
         {
@@ -180,6 +181,42 @@ namespace RealEstateAgent
         private Image readImage()
         {
             return pBox_estateImage.Image;
+        }
+
+        //Converting the text in the textfield to an int.
+        // If it´s ok, success sets to true and result will be returned
+        private int readAttribute1()
+        {
+            int resultat;
+
+            bool success = int.TryParse(txt_dynamic1.Text, out resultat);
+
+            if (success)
+            {
+                return resultat;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        //Converting the text in the id textfield to an int.
+        // If it´s ok, success sets to true and result will be returned
+        private int readAttribute2()
+        {
+            int resultat;
+
+            bool success = int.TryParse(txt_dynamic2.Text, out resultat);
+
+            if (success)
+            {
+                return resultat;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         //cleares all the textfields
@@ -549,6 +586,27 @@ namespace RealEstateAgent
         
         }
 
+        private void mnuFileSave_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.InitialDirectory = Application.StartupPath;
+
+            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Debug.WriteLine(" Du har tryckt på ok");
+                fileName = saveFileDialog1.FileName;
+                if (estateManager.BinarySerialize(fileName))
+                {
+                    //Uppdatera gui
+                    Debug.WriteLine("Nu finns det en fil på: " + Application.StartupPath);
+                   
+                }
+            } else
+            {
+                Debug.WriteLine(" Du ör i else delen nu ");
+
+            }
+        }
+
 
 
 
@@ -601,50 +659,6 @@ namespace RealEstateAgent
         {
 
         }
-
-
-
-        //Metoder att ta bort: 
-
-        //Converting the text in the textfield to an int.
-        // If it´s ok, success sets to true and result will be returned
-        private int readAttribute1()
-        {
-            int resultat;
-
-            bool success = int.TryParse(txt_dynamic1.Text, out resultat);
-
-            if (success)
-            {
-                return resultat;
-            }
-            else
-            {
-                return 0;
-            }
-        }
-
-        //Converting the text in the id textfield to an int.
-        // If it´s ok, success sets to true and result will be returned
-        private int readAttribute2()
-        {
-            int resultat;
-
-            bool success = int.TryParse(txt_dynamic2.Text, out resultat);
-
-            if (success)
-            {
-                return resultat;
-            }
-            else
-            {
-                return 0;
-            }
-        }
-
-
-
-
 
     }
 

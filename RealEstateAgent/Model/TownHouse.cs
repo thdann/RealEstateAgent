@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace RealEstateAgent
 {
+    [Serializable]
     public class TownHouse : Residential
     {
         // Instancevaiables specific to all ToenHouse estates

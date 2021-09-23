@@ -57,12 +57,6 @@ namespace RealEstateAgent
             this.lbl_uploadImages = new System.Windows.Forms.Label();
             this.btn_upploadImages = new System.Windows.Forms.Button();
             this.txt_id = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_edit = new System.Windows.Forms.Button();
-            this.btn_remove = new System.Windows.Forms.Button();
-            this.lst_Estates = new System.Windows.Forms.ListBox();
-            this.pBox_estateImage = new System.Windows.Forms.PictureBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,12 +65,19 @@ namespace RealEstateAgent
             this.mnuFileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileXML = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_edit = new System.Windows.Forms.Button();
+            this.btn_remove = new System.Windows.Forms.Button();
+            this.lst_Estates = new System.Windows.Forms.ListBox();
+            this.pBox_estateImage = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnl_southwest.SuspendLayout();
             this.pnl_northwest.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBox_estateImage)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -406,6 +407,70 @@ namespace RealEstateAgent
             this.txt_id.Size = new System.Drawing.Size(231, 27);
             this.txt_id.TabIndex = 10;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_northwest.SetColumnSpan(this.menuStrip1, 2);
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFile});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(473, 28);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // mnuFile
+            // 
+            this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFileNew,
+            this.mnuFileOpen,
+            this.mnuFileSave,
+            this.mnuFileSaveAs,
+            this.mnuFileXML,
+            this.mnuFileExit});
+            this.mnuFile.Name = "mnuFile";
+            this.mnuFile.Size = new System.Drawing.Size(46, 24);
+            this.mnuFile.Text = "File";
+            // 
+            // mnuFileNew
+            // 
+            this.mnuFileNew.Name = "mnuFileNew";
+            this.mnuFileNew.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileNew.Text = "New";
+            // 
+            // mnuFileOpen
+            // 
+            this.mnuFileOpen.Name = "mnuFileOpen";
+            this.mnuFileOpen.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileOpen.Text = "Open";
+            // 
+            // mnuFileSave
+            // 
+            this.mnuFileSave.Name = "mnuFileSave";
+            this.mnuFileSave.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileSave.Text = "Save";
+            this.mnuFileSave.Click += new System.EventHandler(this.mnuFileSave_Click);
+            // 
+            // mnuFileSaveAs
+            // 
+            this.mnuFileSaveAs.Name = "mnuFileSaveAs";
+            this.mnuFileSaveAs.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileSaveAs.Text = "Save As";
+            // 
+            // mnuFileXML
+            // 
+            this.mnuFileXML.Name = "mnuFileXML";
+            this.mnuFileXML.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileXML.Text = "XML";
+            // 
+            // mnuFileExit
+            // 
+            this.mnuFileExit.Name = "mnuFileExit";
+            this.mnuFileExit.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileExit.Text = "Exit";
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -471,69 +536,6 @@ namespace RealEstateAgent
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_northwest.SetColumnSpan(this.menuStrip1, 2);
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(473, 28);
-            this.menuStrip1.TabIndex = 11;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // mnuFile
-            // 
-            this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileNew,
-            this.mnuFileOpen,
-            this.mnuFileSave,
-            this.mnuFileSaveAs,
-            this.mnuFileXML,
-            this.mnuFileExit});
-            this.mnuFile.Name = "mnuFile";
-            this.mnuFile.Size = new System.Drawing.Size(46, 24);
-            this.mnuFile.Text = "File";
-            // 
-            // mnuFileNew
-            // 
-            this.mnuFileNew.Name = "mnuFileNew";
-            this.mnuFileNew.Size = new System.Drawing.Size(224, 26);
-            this.mnuFileNew.Text = "New";
-            // 
-            // mnuFileOpen
-            // 
-            this.mnuFileOpen.Name = "mnuFileOpen";
-            this.mnuFileOpen.Size = new System.Drawing.Size(224, 26);
-            this.mnuFileOpen.Text = "Open";
-            // 
-            // mnuFileSave
-            // 
-            this.mnuFileSave.Name = "mnuFileSave";
-            this.mnuFileSave.Size = new System.Drawing.Size(224, 26);
-            this.mnuFileSave.Text = "Save";
-            // 
-            // mnuFileSaveAs
-            // 
-            this.mnuFileSaveAs.Name = "mnuFileSaveAs";
-            this.mnuFileSaveAs.Size = new System.Drawing.Size(224, 26);
-            this.mnuFileSaveAs.Text = "Save As";
-            // 
-            // mnuFileXML
-            // 
-            this.mnuFileXML.Name = "mnuFileXML";
-            this.mnuFileXML.Size = new System.Drawing.Size(224, 26);
-            this.mnuFileXML.Text = "XML";
-            // 
-            // mnuFileExit
-            // 
-            this.mnuFileExit.Name = "mnuFileExit";
-            this.mnuFileExit.Size = new System.Drawing.Size(224, 26);
-            this.mnuFileExit.Text = "Exit";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -549,10 +551,10 @@ namespace RealEstateAgent
             this.pnl_southwest.PerformLayout();
             this.pnl_northwest.ResumeLayout(false);
             this.pnl_northwest.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pBox_estateImage)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pBox_estateImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -601,6 +603,7 @@ namespace RealEstateAgent
         private System.Windows.Forms.ToolStripMenuItem mnuFileSaveAs;
         private System.Windows.Forms.ToolStripMenuItem mnuFileXML;
         private System.Windows.Forms.ToolStripMenuItem mnuFileExit;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

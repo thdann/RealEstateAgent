@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace RealEstateAgent
 {
+    [Serializable]
     public class Warehouse : Commercial
     {
         // Instancevaiables specific to all Warehouse estates

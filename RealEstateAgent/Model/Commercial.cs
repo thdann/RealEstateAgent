@@ -1,8 +1,9 @@
-﻿
+﻿using System;
 using System.Windows.Forms;
 
 namespace RealEstateAgent
 {
+    [Serializable]
     public abstract class Commercial : Estate
     {
         // Instancevaiables specific to all Commercial estates
