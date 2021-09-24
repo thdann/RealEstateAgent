@@ -6,10 +6,12 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace RealEstateAgent
 {
     [Serializable]
+    
     public class ListManager<T> : IListManager<T>
     {
         private List<T> list;
@@ -123,7 +125,6 @@ namespace RealEstateAgent
             return listOut;
         }
 
-
         public bool BinaryDeSerialize(string fileName)
         {
             bool ok = false;
@@ -139,7 +140,8 @@ namespace RealEstateAgent
             }
             catch (Exception e)
             {
-                Debug.WriteLine(e.Message);
+                Debug.WriteLine(e.StackTrace);
+                System.Windows.Forms.MessageBox.Show(e.Message);
             }
             finally
             {
@@ -160,7 +162,6 @@ namespace RealEstateAgent
                 IFormatter formatter = new BinaryFormatter();
                 formatter.Serialize(file, list);
                 ok = true;
-                Debug.WriteLine(" Serialize gick ok ");
             }
             catch (Exception e)
             {
@@ -169,7 +170,6 @@ namespace RealEstateAgent
             finally
             {
                 file.Close();
-                Debug.WriteLine(" Nu är filen stängd ");
             }
 
             return ok;
@@ -182,7 +182,43 @@ namespace RealEstateAgent
 
         public bool XMLSerialize(string fileName)
         {
-            throw new NotImplementedException();
+            bool ok = false;
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<T>)) ;
+            TextWriter textWriter = new StreamWriter(fileName);
+
+            try
+            {
+                Debug.WriteLine(fileName) ;
+                xmlSerializer.Serialize(textWriter, list);
+                ok = true;
+
+            }
+            catch (Exception e)
+            {
+
+                Debug.WriteLine("Du är i XMLSerialize() och Exception fångat: " + e.StackTrace);
+
+            }
+
+            finally 
+            {
+                if (textWriter != null) 
+                {
+                    textWriter.Close();
+                
+                }
+            
+            }
+
+            return ok;
+
+
+
         }
+
+
+       // public bool XMLDeSerialize() { }
+
+
     }
 }

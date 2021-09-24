@@ -4,10 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace RealEstateAgent
 {
     [Serializable]
+    [XmlInclude(typeof(Warehouse))]
+    [XmlInclude(typeof(Shop))]
+    [XmlInclude(typeof(Apartment))]
+    [XmlInclude(typeof(Villa))]
+    [XmlInclude(typeof(TownHouse))]
+    [XmlInclude(typeof(University))]
+    [XmlInclude(typeof(School))]
+
     public abstract class Estate : IEstate
     {
         // Instancevaiables specific to all estates

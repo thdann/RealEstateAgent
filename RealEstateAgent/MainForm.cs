@@ -287,8 +287,6 @@ namespace RealEstateAgent
         // and it should be edited. If it is -1 a new estate object should be created
         private void btn_save_Click(object sender, EventArgs e)
         {
-            Debug.WriteLine("Du har klickat på save");
-
             Estate createdEstate = createObject();
 
             if (lst_Estates.SelectedIndex < 0)
@@ -319,8 +317,6 @@ namespace RealEstateAgent
         {
             enableTextFields();
         }
-
-
 
         // Create an objectType depending on user input, and set its specific attributes. Save in variable.
         public Estate createObject() {
@@ -464,9 +460,6 @@ namespace RealEstateAgent
             }
         }
 
-
-        // OBS - fråga Farid om ref! Eller kolla youtube
-        // 
         public void setEstateObjectToTextfields(ref Estate selectedObject) {
 
             pBox_estateImage.Image = selectedObject.EstateImage;
@@ -485,6 +478,7 @@ namespace RealEstateAgent
 
         }
 
+        // Collects properties specific to EstateType classes
         public String getAttribute1FromSelectedObject(Estate selectedObject) 
         {
             switch (selectedObject)
@@ -502,6 +496,7 @@ namespace RealEstateAgent
         
         }
 
+        // Collects properties specific to concrete classes
         public String getAttribute2FromSelectedObject(Estate selectedObject)
         {
             switch (selectedObject)
@@ -586,25 +581,68 @@ namespace RealEstateAgent
         
         }
 
-        private void mnuFileSave_Click(object sender, EventArgs e)
+        public bool SaveAs() 
         {
+            bool ok = false;
+
             saveFileDialog1.InitialDirectory = Application.StartupPath;
 
-            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                Debug.WriteLine(" Du har tryckt på ok");
                 fileName = saveFileDialog1.FileName;
-                if (estateManager.BinarySerialize(fileName))
-                {
-                    //Uppdatera gui
-                    Debug.WriteLine("Nu finns det en fil på: " + Application.StartupPath);
-                   
-                }
-            } else
-            {
-                Debug.WriteLine(" Du ör i else delen nu ");
-
+                ok = Save();
             }
+
+            return ok;    
+
+        }
+
+        public bool Save() {
+
+            bool ok = false;
+
+            if (fileName == null)
+            {
+                ok = SaveAs();
+            } 
+            else 
+            {
+                ok =  estateManager.BinarySerialize(fileName);
+            }
+
+            return ok;
+           
+        }
+
+        private void mnuFileNew_Click(object sender, EventArgs e)
+        {
+            DialogResult save = MessageBox.Show("Do you want to save changes?", "Save changes?", MessageBoxButtons.YesNo);
+            if (save == DialogResult.Yes)
+            {
+                if (Save())
+                {
+                    
+                    MessageBox.Show("Changes Saved");
+                }
+                else
+                {
+                    MessageBox.Show("Oops, something went wrong!");
+                }
+            }
+
+            fileName = null;
+            estateManager = new EstateManager();
+            UpdateResultInList();
+        }
+
+        private void mnuFileSave_Click(object sender, EventArgs e)
+        {
+            Save();
+        }
+
+        private void mnuFileSaveAs_Click(object sender, EventArgs e)
+        {
+            SaveAs();
         }
 
         private void mnuFileOpen_Click(object sender, EventArgs e)
@@ -620,17 +658,42 @@ namespace RealEstateAgent
                 }
                 else
                 {
-                    Debug.WriteLine("Du är i else delen på open file");
+                    MessageBox.Show("Error loading file");
                 }
             }
         }
 
-        private void mnuFileNew_Click(object sender, EventArgs e)
+        private void exportToXMLFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //jämför om användare har klickat spara innan
-            estateManager = new EstateManager();
-            UpdateResultInList();
+
+            saveFileDialog1.InitialDirectory = Application.StartupPath;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                fileName = saveFileDialog1.FileName;
+                if (estateManager.XMLSerialize(fileName))
+                {
+                    //Uppdatera gui
+                    Debug.WriteLine("Nu finns det en fil på: " + Application.StartupPath);
+
+                }
+            }
+            else
+            {
+                Debug.WriteLine(" Du är i else delen nu ");
+
+            }
+
         }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -683,7 +746,7 @@ namespace RealEstateAgent
 
         }
 
-        
+
     }
 
 

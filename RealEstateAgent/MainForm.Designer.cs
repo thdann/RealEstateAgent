@@ -64,6 +64,8 @@ namespace RealEstateAgent
             this.mnuFileSave = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileXML = new System.Windows.Forms.ToolStripMenuItem();
+            this.importFromXMLFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToXMLFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_edit = new System.Windows.Forms.Button();
@@ -460,12 +462,29 @@ namespace RealEstateAgent
             this.mnuFileSaveAs.Name = "mnuFileSaveAs";
             this.mnuFileSaveAs.Size = new System.Drawing.Size(224, 26);
             this.mnuFileSaveAs.Text = "Save As";
+            this.mnuFileSaveAs.Click += new System.EventHandler(this.mnuFileSaveAs_Click);
             // 
             // mnuFileXML
             // 
+            this.mnuFileXML.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importFromXMLFileToolStripMenuItem,
+            this.exportToXMLFileToolStripMenuItem});
             this.mnuFileXML.Name = "mnuFileXML";
             this.mnuFileXML.Size = new System.Drawing.Size(224, 26);
             this.mnuFileXML.Text = "XML";
+            // 
+            // importFromXMLFileToolStripMenuItem
+            // 
+            this.importFromXMLFileToolStripMenuItem.Name = "importFromXMLFileToolStripMenuItem";
+            this.importFromXMLFileToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.importFromXMLFileToolStripMenuItem.Text = "Import from XML file";
+            // 
+            // exportToXMLFileToolStripMenuItem
+            // 
+            this.exportToXMLFileToolStripMenuItem.Name = "exportToXMLFileToolStripMenuItem";
+            this.exportToXMLFileToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.exportToXMLFileToolStripMenuItem.Text = "Export to XML file";
+            this.exportToXMLFileToolStripMenuItem.Click += new System.EventHandler(this.exportToXMLFileToolStripMenuItem_Click);
             // 
             // mnuFileExit
             // 
@@ -606,6 +625,8 @@ namespace RealEstateAgent
         private System.Windows.Forms.ToolStripMenuItem mnuFileXML;
         private System.Windows.Forms.ToolStripMenuItem mnuFileExit;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem importFromXMLFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportToXMLFileToolStripMenuItem;
     }
 }
 
