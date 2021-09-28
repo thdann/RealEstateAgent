@@ -299,7 +299,6 @@ namespace RealEstateAgent
             
             }
 
-
             UpdateResultInList();
             clearTextFields();
         }
@@ -746,7 +745,7 @@ namespace RealEstateAgent
 
         }
 
-
+     
     }
 
 

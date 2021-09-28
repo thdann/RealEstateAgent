@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Drawing;
-using System.Xml;
 using System.Xml.Serialization;
 
 namespace RealEstateAgent
@@ -26,6 +20,7 @@ namespace RealEstateAgent
         private LegalForm legalForm;
         private int price;
         private Image estateImage;
+      
 
         //Constructors
         public Estate() { }

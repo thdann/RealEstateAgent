@@ -389,6 +389,7 @@ namespace RealEstateAgent
             this.lbl_uploadImages.Size = new System.Drawing.Size(230, 20);
             this.lbl_uploadImages.TabIndex = 8;
             this.lbl_uploadImages.Text = "Image:";
+            
             // 
             // btn_upploadImages
             // 
@@ -422,6 +423,7 @@ namespace RealEstateAgent
             this.menuStrip1.Size = new System.Drawing.Size(473, 28);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
+           
             // 
             // mnuFile
             // 
@@ -439,28 +441,28 @@ namespace RealEstateAgent
             // mnuFileNew
             // 
             this.mnuFileNew.Name = "mnuFileNew";
-            this.mnuFileNew.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileNew.Size = new System.Drawing.Size(143, 26);
             this.mnuFileNew.Text = "New";
             this.mnuFileNew.Click += new System.EventHandler(this.mnuFileNew_Click);
             // 
             // mnuFileOpen
             // 
             this.mnuFileOpen.Name = "mnuFileOpen";
-            this.mnuFileOpen.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileOpen.Size = new System.Drawing.Size(143, 26);
             this.mnuFileOpen.Text = "Open";
             this.mnuFileOpen.Click += new System.EventHandler(this.mnuFileOpen_Click);
             // 
             // mnuFileSave
             // 
             this.mnuFileSave.Name = "mnuFileSave";
-            this.mnuFileSave.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileSave.Size = new System.Drawing.Size(143, 26);
             this.mnuFileSave.Text = "Save";
             this.mnuFileSave.Click += new System.EventHandler(this.mnuFileSave_Click);
             // 
             // mnuFileSaveAs
             // 
             this.mnuFileSaveAs.Name = "mnuFileSaveAs";
-            this.mnuFileSaveAs.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileSaveAs.Size = new System.Drawing.Size(143, 26);
             this.mnuFileSaveAs.Text = "Save As";
             this.mnuFileSaveAs.Click += new System.EventHandler(this.mnuFileSaveAs_Click);
             // 
@@ -470,7 +472,7 @@ namespace RealEstateAgent
             this.importFromXMLFileToolStripMenuItem,
             this.exportToXMLFileToolStripMenuItem});
             this.mnuFileXML.Name = "mnuFileXML";
-            this.mnuFileXML.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileXML.Size = new System.Drawing.Size(143, 26);
             this.mnuFileXML.Text = "XML";
             // 
             // importFromXMLFileToolStripMenuItem
@@ -489,7 +491,7 @@ namespace RealEstateAgent
             // mnuFileExit
             // 
             this.mnuFileExit.Name = "mnuFileExit";
-            this.mnuFileExit.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileExit.Size = new System.Drawing.Size(143, 26);
             this.mnuFileExit.Text = "Exit";
             // 
             // tableLayoutPanel2

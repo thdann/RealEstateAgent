@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace RealEstateAgent
@@ -15,6 +13,7 @@ namespace RealEstateAgent
     public class ListManager<T> : IListManager<T>
     {
         private List<T> list;
+
 
         public ListManager() {
             list = new List<T>();
@@ -127,6 +126,8 @@ namespace RealEstateAgent
 
         public bool BinaryDeSerialize(string fileName)
         {
+            
+            
             bool ok = false;
             FileStream file = null;
 
@@ -141,14 +142,14 @@ namespace RealEstateAgent
             catch (Exception e)
             {
                 Debug.WriteLine(e.StackTrace);
-                System.Windows.Forms.MessageBox.Show(e.Message);
+                
             }
             finally
             {
                 file.Close();
             }
 
-            return ok;
+            return ok; 
         }
 
         public bool BinarySerialize(string fileName)
@@ -172,7 +173,7 @@ namespace RealEstateAgent
                 file.Close();
             }
 
-            return ok;
+            return ok; 
         }
 
         public void DeleteAll()

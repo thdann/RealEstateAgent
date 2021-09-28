@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
+﻿
 
 namespace RealEstateAgent
 {
@@ -16,12 +10,7 @@ namespace RealEstateAgent
         {
             TestEstates();
         }
-        public void AddEstate (Estate estate)
-        {
-            //fixa id , autogenerera?
-            //anropa Add - list
-            Add(estate); //Fråga om det är ok att göra så här, utan base så blit det stackOverflow
-        }
+       
 
         public void TestEstates()
         {

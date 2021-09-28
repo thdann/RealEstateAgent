@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+
+
 
 namespace RealEstateAgent
 {
@@ -18,7 +16,8 @@ namespace RealEstateAgent
         public Apartment(int id, Address address, LegalForm legalForm, int price, int numberOfRooms, int floor ) 
             : base(id, address, legalForm, price, numberOfRooms) 
         {
-            this.floor = floor;        
+            this.floor = floor;  
+           
         }
 
         //Properties - get/set for private instancevariables (encapsulation)
