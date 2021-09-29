@@ -7,7 +7,7 @@ namespace RealEstateAgent
 {
     public partial class MainForm : Form
     {
-        //private Estate estate;
+        
         private EstateManager estateManager;
         private string fileName;
 
